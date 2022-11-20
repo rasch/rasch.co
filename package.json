@@ -1,7 +1,8 @@
 {
   "type": "module",
-  "dependencies": {
+  "devDependencies": {
     "@fontsource/comic-mono": "^4.5.3",
-    "@fontsource/special-elite": "^4.5.8"
+    "@fontsource/special-elite": "^4.5.8",
+    "serve": "^14.1.2"
   }
 }
