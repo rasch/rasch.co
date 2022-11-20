@@ -1,0 +1,73 @@
+#!/bin/sh
+
+PATH=./node_modules/.bin:$PATH
+
+clean() {
+  rm -fr dist node_modules ssl
+}
+
+init() {
+  mkdir -p dist
+  yarn install
+  cp -r node_modules/@fontsource dist
+}
+
+build_site() {
+  node src/index.js
+  node src/style.js
+  node src/writing/index.js
+  cp -r src/script/* dist
+}
+
+build_netlify() {
+  cp -r src/static/_headers dist
+  cp -r src/static/_redirects dist
+}
+
+build_pgp() {
+  cp -r src/static/.well-known dist
+}
+
+build() {
+  clean
+  init
+  build_site
+  build_netlify
+  build_pgp
+}
+
+# NOTE: This self-signed SSL certificate is **not** for production.
+generate_ssl_cert() {
+  test -d ssl && return
+  mkdir ssl
+  openssl req \
+    -newkey rsa:2048 \
+    -new \
+    -nodes \
+    -x509 \
+    -days 3650 \
+    -keyout ssl/key.pem \
+    -out ssl/cert.pem \
+    -subj "/C=US/ST=Michigan/L=Detroit/O=Company Name/OU=Org/CN=localhost"
+}
+
+dev() {
+  generate_ssl_cert
+  serve -p "${1:-3003}" \
+    --ssl-cert ssl/cert.pem \
+    --ssl-key ssl/key.pem \
+    --no-clipboard \
+    dist
+}
+
+default() {
+  help
+}
+
+help() {
+  echo "$0 <task> <args>"
+  echo "Tasks:"
+  sed -n 's/^\([a-z][a-z_]\+\)() {/\1/p' "$0" | cat -n
+}
+
+"${@:-default}"
