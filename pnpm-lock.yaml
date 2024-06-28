@@ -1,0 +1,47 @@
+lockfileVersion: '9.0'
+
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
+importers:
+
+  .:
+    devDependencies:
+      '@rasch/reno':
+        specifier: ^0.1.0
+        version: 0.1.0
+
+packages:
+
+  '@rasch/reno@0.1.0':
+    resolution: {integrity: sha512-Q+HgDJRm9Iuiqp37k2OsQVOGozTRxbGBPyQ0MN4c6VDdnGhqr6IsnpQ6JfBf73ByxJ+JWiAQmguSuuXqkddIdQ==}
+
+  github-slugger@2.0.0:
+    resolution: {integrity: sha512-IaOQ9puYtjrkq7Y0Ygl9KDZnrf/aiUJYUpVf89y8kyaxbRG7Y1SrX/jaumrv81vc61+kiMempujsM3Yw7w5qcw==}
+
+  marked-gfm-heading-id@4.0.0:
+    resolution: {integrity: sha512-p53gp+nBIGeryucXzUFP8w67wtpin68+jOFBPw5m9FUfqx2ngAunO/I6KU6J3Xm3fyuv2JsSDxz0Z+pYVrHrwg==}
+    peerDependencies:
+      marked: '>=13 <14'
+
+  marked@13.0.1:
+    resolution: {integrity: sha512-7kBohS6GrZKvCsNXZyVVXSW7/hGBHe49ng99YPkDCckSUrrG7MSFLCexsRxptzOmyW2eT5dySh4Md1V6my52fA==}
+    engines: {node: '>= 18'}
+    hasBin: true
+
+snapshots:
+
+  '@rasch/reno@0.1.0':
+    dependencies:
+      marked: 13.0.1
+      marked-gfm-heading-id: 4.0.0(marked@13.0.1)
+
+  github-slugger@2.0.0: {}
+
+  marked-gfm-heading-id@4.0.0(marked@13.0.1):
+    dependencies:
+      github-slugger: 2.0.0
+      marked: 13.0.1
+
+  marked@13.0.1: {}

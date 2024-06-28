@@ -1,0 +1,6 @@
+{
+  "type": "module",
+  "devDependencies": {
+    "@rasch/reno": "^0.1.0"
+  }
+}
