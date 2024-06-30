@@ -9,13 +9,13 @@ importers:
   .:
     devDependencies:
       '@rasch/reno':
-        specifier: ^0.1.0
-        version: 0.1.0
+        specifier: ^0.1.1
+        version: 0.1.1
 
 packages:
 
-  '@rasch/reno@0.1.0':
-    resolution: {integrity: sha512-Q+HgDJRm9Iuiqp37k2OsQVOGozTRxbGBPyQ0MN4c6VDdnGhqr6IsnpQ6JfBf73ByxJ+JWiAQmguSuuXqkddIdQ==}
+  '@rasch/reno@0.1.1':
+    resolution: {integrity: sha512-zBrpWGRM3ih7SSSsfsxtnw4oWSL3xLwsp0Sn/CHegksIO1A5tv5BR4M8SmpIPr2WI22lbog3ulYB68+L5Iv3wg==}
 
   github-slugger@2.0.0:
     resolution: {integrity: sha512-IaOQ9puYtjrkq7Y0Ygl9KDZnrf/aiUJYUpVf89y8kyaxbRG7Y1SrX/jaumrv81vc61+kiMempujsM3Yw7w5qcw==}
@@ -32,7 +32,7 @@ packages:
 
 snapshots:
 
-  '@rasch/reno@0.1.0':
+  '@rasch/reno@0.1.1':
     dependencies:
       marked: 13.0.1
       marked-gfm-heading-id: 4.0.0(marked@13.0.1)
