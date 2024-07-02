@@ -1,0 +1,81 @@
+#!/bin/sh
+
+PATH=./node_modules/.bin:$PATH
+
+clean() {
+  git clean -X
+}
+
+build_site() {
+  node src/index.js
+}
+
+build_assets() {
+  cp -a \
+    src/script/* src/static/* src/static/.* \
+    media/profile.webp media/pronunciation.mp3 \
+    dist
+}
+
+build_sprite() {
+  mkdir -p dist/i
+  gm convert -background black +append \
+    media/sprite/phalanx.jpg \
+    media/sprite/today.jpg \
+    media/sprite/transactions.jpg \
+    media/sprite/containers.jpg \
+    media/sprite/dicecube.jpg \
+    media/sprite/bf.jpg \
+    media/sprite/reno.jpg \
+    media/sprite/pomodoro.jpg \
+    media/sprite/speed.jpg \
+    dist/i/sprite.jpg
+}
+
+build_images() {
+  for img in media/images/*.jpg; do
+    for size in 1600 1200 600; do
+      mkdir -p dist/i/"$size"
+      gm convert "$img" -resize "${size}x${size}>" +profile "*" \
+        dist/i/"$size"/"${img##*/}"
+    done
+  done
+}
+
+build() {
+  build_site
+  build_assets
+  build_sprite
+  build_images
+}
+
+# NOTE: This self-signed SSL certificate is NOT for production.
+generate_ssl_cert() {
+  mkdir -p dist
+  openssl req \
+    -newkey rsa:2048 \
+    -new \
+    -nodes \
+    -x509 \
+    -days 3650 \
+    -keyout key.pem \
+    -out cert.pem \
+    -subj "/C=US/ST=Michigan/L=Detroit/O=Company Name/OU=Org/CN=localhost"
+}
+
+dev() {
+  generate_ssl_cert
+  serve -p "${1:-3000}" \
+    --ssl-cert dist/cert.pem \
+    --ssl-key dist/key.pem \
+    --no-clipboard \
+    dist
+}
+
+help() {
+  echo "$0 <task> <args>"
+  echo "Tasks:"
+  sed -n 's/^\([a-z][a-z_]\+\)() {/\1/p' "$0" | cat -n
+}
+
+"${@:-help}"
