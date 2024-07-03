@@ -5,11 +5,9 @@ import { css, html } from "@rasch/reno"
  * @param {string} [label]
  */
 export const icon = (title, label) => html`
-<svg
-  role="img"
-  class="icon ${title}-icon"
-  ${label ? `aria-label="${label}"` : `aria-hidden="true"`}
->
+<svg role="img" class="icon ${title}-icon" aria-${
+  label ? `label="${label}"` : `hidden="true"`
+}>
   <use href="/icons.svg#${title}-icon"></use>
 </svg>`
 
