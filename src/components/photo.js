@@ -30,8 +30,8 @@ export const photoCSS = () => css`
   width: 100%;
   padding: 0 0.5rem;
 
-  background-color: var(--bg-opaque);
-  color: var(--fg-opaque);
+  background-color: var(--black-opaque);
+  color: var(--white);
   font-size: 0.8rem;
 
   transform: scaleY(1);

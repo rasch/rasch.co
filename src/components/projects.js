@@ -3,16 +3,15 @@ import { project } from "./project.js"
 import { projectsMore } from "./projects-more.js"
 
 /**
- * @param {import("./data.js").SiteData} data
- * @returns {string}
+ * @param {import("./projects/index.js").Project[]} projects
  */
-export const projects = data => html`
+export const projects = projects => html`
 <div id="projects" class="page projects">
   <div>
     <h2 class="texture">$ ls projects</h2>
     <ul class="project-row">
       ${
-        data.projects
+        projects
         .filter(p => p.layout === "featured")
         .map(project)
         .join("")
@@ -23,14 +22,14 @@ export const projects = data => html`
       style="--height:102px; --shadow-offset:0.6rem; --shadow-density:6px;"
     >
       ${
-        data.projects
+        projects
         .filter(p => p.layout === "normal")
         .map(project)
         .join("")
       }
     </ul>
   </div>
-  ${projectsMore(data)}
+  ${projectsMore(projects)}
 </div>`
 
 export const projectsCSS = () => css`

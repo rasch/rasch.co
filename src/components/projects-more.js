@@ -3,16 +3,16 @@ import { icon } from "./icon.js"
 import { project } from "./project.js"
 
 /**
- * @param {import("./data.js").SiteData} data
+ * @param {import("./projects/index.js").Project[]} projects
  */
-export const projectsMore = data => html`
+export const projectsMore = projects => html`
 <section class="projects-more">
   <div class="card">
     <h2>${icon("file-text")} more</h2>
   </div>
   <ul>
     ${
-      data.projects
+      projects
       .filter(p => p.layout === "mini")
       .map(project)
       .join("")

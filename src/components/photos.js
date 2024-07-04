@@ -79,8 +79,8 @@ export const photosCSS = () => css`
   gap: 2rem;
 
   max-width: 1500px;
-  margin: 0 auto 6rem;
-  padding: 0 2%;
+  margin: 0 auto;
+  padding: 0 2% 6rem;
 
   list-style-type: none;
 }
