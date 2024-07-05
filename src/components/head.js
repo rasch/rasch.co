@@ -1,4 +1,5 @@
 import { html } from "@rasch/reno"
+import { openGraph } from "./open-graph.js"
 import { favicon } from "./favicon.js"
 
 /**
@@ -10,6 +11,7 @@ export const head = data => html`
   <title>${data.title}</title>
   <meta name="description" content="${data.description}">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  ${openGraph(data)}
   ${favicon()}
   <link rel="stylesheet" href="style.css">
   <script defer src="index.js"></script>
