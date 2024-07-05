@@ -32,7 +32,7 @@ export const contact = () => html`
     <h3>Send electronic mail to me!</h3>
     <p><em>...if you want to</em></p>
     <div class="email" style="--icon-size:1.75rem">
-      ${icon("send")} ${email} 
+      ${icon("send")} ${email}
     </div>
   </div>
   <pre class="pubkey">${pgpkey}</pre>
