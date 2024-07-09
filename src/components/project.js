@@ -1,6 +1,6 @@
 import { css, html } from "@rasch/reno"
 import { icon } from "./icon.js"
-import { g } from "./utilities.js"
+import { g } from "./g.js"
 
 /**
  * @param {import("./projects/index.js").Project} prj
