@@ -9,13 +9,13 @@ importers:
   .:
     devDependencies:
       '@rasch/reno':
-        specifier: ^0.1.1
-        version: 0.1.1
+        specifier: ^0.2.0
+        version: 0.2.0
 
 packages:
 
-  '@rasch/reno@0.1.1':
-    resolution: {integrity: sha512-zBrpWGRM3ih7SSSsfsxtnw4oWSL3xLwsp0Sn/CHegksIO1A5tv5BR4M8SmpIPr2WI22lbog3ulYB68+L5Iv3wg==}
+  '@rasch/reno@0.2.0':
+    resolution: {integrity: sha512-HtMvvrLOIbnWSl/ykNyuoOTiUCza50SkWcowo4Z+KfQLgLTmauaf6+lREwSyla7UT0+vBbL6TKxvTGyrPyS5Jw==}
 
   github-slugger@2.0.0:
     resolution: {integrity: sha512-IaOQ9puYtjrkq7Y0Ygl9KDZnrf/aiUJYUpVf89y8kyaxbRG7Y1SrX/jaumrv81vc61+kiMempujsM3Yw7w5qcw==}
@@ -25,23 +25,23 @@ packages:
     peerDependencies:
       marked: '>=13 <14'
 
-  marked@13.0.1:
-    resolution: {integrity: sha512-7kBohS6GrZKvCsNXZyVVXSW7/hGBHe49ng99YPkDCckSUrrG7MSFLCexsRxptzOmyW2eT5dySh4Md1V6my52fA==}
+  marked@13.0.2:
+    resolution: {integrity: sha512-J6CPjP8pS5sgrRqxVRvkCIkZ6MFdRIjDkwUwgJ9nL2fbmM6qGQeB2C16hi8Cc9BOzj6xXzy0jyi0iPIfnMHYzA==}
     engines: {node: '>= 18'}
     hasBin: true
 
 snapshots:
 
-  '@rasch/reno@0.1.1':
+  '@rasch/reno@0.2.0':
     dependencies:
-      marked: 13.0.1
-      marked-gfm-heading-id: 4.0.0(marked@13.0.1)
+      marked: 13.0.2
+      marked-gfm-heading-id: 4.0.0(marked@13.0.2)
 
   github-slugger@2.0.0: {}
 
-  marked-gfm-heading-id@4.0.0(marked@13.0.1):
+  marked-gfm-heading-id@4.0.0(marked@13.0.2):
     dependencies:
       github-slugger: 2.0.0
-      marked: 13.0.1
+      marked: 13.0.2
 
-  marked@13.0.1: {}
+  marked@13.0.2: {}
