@@ -1,0 +1,41 @@
+import { css } from "@rasch/reno"
+
+export const customPropertiesCSS = () => css`
+:where(html) {
+  --system-sans: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif;
+  --system-serif: Iowan Old Style, Apple Garamond, Baskerville, Times New Roman, Droid Serif, Times, Source Serif Pro, serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+  --system-mono: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace;
+
+  --sans: "Montserrat", var(--system-sans);
+  --serif: var(--system-serif);
+  --mono: "IBM Plex Mono", var(--system-mono);
+
+  --white: hsl(120 25% 95%);
+  --black: hsl(180 1% 13%);
+  --white-opaque: hsl(120 25% 95% / 13%);
+  --black-opaque: hsl(180 1% 13% / 33%);
+
+  --fg: var(--white);
+  --bg: var(--black);
+  --texture: var(--white-opaque);
+
+  --fg-light: var(--black);
+  --bg-light: var(--white);
+  --texture-light: var(--black-opaque);
+
+  --elastic: cubic-bezier(0.5, 1.25, 0.75, 1.25);
+
+  --gradient: linear-gradient(
+    135deg,
+    hsl(34deg 100% 82%) 0%,
+    hsl(23deg 100% 81%) 11%,
+    hsl(11deg 100% 82%) 22%,
+    hsl(340deg 47% 72%) 33%,
+    hsl(269deg 17% 57%) 44%,
+    hsl(206deg 27% 50%) 55%,
+    hsl(177deg 27% 51%) 66%,
+    hsl(118deg 21% 66%) 77%,
+    hsl(89deg 29% 73%) 88%,
+    hsl(66deg 41% 81%) 100%
+  );
+}`

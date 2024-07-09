@@ -30,20 +30,7 @@ export const titleCSS = () => css`
 }
 
 .title > span {
-  background:
-    linear-gradient(
-      135deg,
-      hsl(34deg 100% 82%) 0%,
-      hsl(23deg 100% 81%) 11%,
-      hsl(11deg 100% 82%) 22%,
-      hsl(340deg 47% 72%) 33%,
-      hsl(269deg 17% 57%) 44%,
-      hsl(206deg 27% 50%) 55%,
-      hsl(177deg 27% 51%) 66%,
-      hsl(118deg 21% 66%) 77%,
-      hsl(89deg 29% 73%) 88%,
-      hsl(66deg 41% 81%) 100%
-    );
+  background-image: var(--gradient);
   -webkit-background-clip: text;
   background-clip: text;
   background-size: 1000% 100%;
