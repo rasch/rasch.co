@@ -14,5 +14,5 @@ export const head = data => html`
   ${openGraph(data)}
   ${favicon()}
   <link rel="stylesheet" href="style.css">
-  <script defer src="index.js"></script>
+  <script type="module" src="index.js"></script>
 </head>`
