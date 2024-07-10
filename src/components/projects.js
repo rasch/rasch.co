@@ -9,7 +9,7 @@ export const projects = projects => html`
 <div id="projects" class="page projects">
   <div>
     <h2 class="texture">$ ls projects</h2>
-    <ul class="project-row">
+    <ul class="project-row" style="--height:322px;">
       ${
         projects
         .filter(p => p.layout === "featured")

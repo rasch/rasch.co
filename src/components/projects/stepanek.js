@@ -11,7 +11,7 @@ export const stepanek = {
   layout: "mini",
   symbol: "star",
   description: md`
-<q>Remember to play after every storm.</q>
+<q class="center">Remember to play after every storm.</q>
 
 The [Mattie J.T. Stepanek Peace Garden][1] is the design project that I am most
 proud of. When the project manager (aka my boss) at [Slater Associates Inc.][2]
@@ -27,13 +27,13 @@ significance of the park.
 <img \
 alt="Oprah speaking at the Mattie J.T. Stepanek Peace Garden dedication ceremony" \
 src="i/600/stepanek-oprah.jpg" \
-class="right" \
+class="thumb" \
 loading="lazy">
 
 The creation of this garden was a team effort including a sculptor, landscape
 installation team, the city of Rockville, our team at SAInc, and most
 importantly, Mattie's mother (plus Mattie's service dog, Micah). [Oprah][4] even gave
-a surprise speech at the dedication ceromony (and my boss had to speak directly
+a surprise speech at the dedication ceremony (and my boss had to speak directly
 after her LOL)! I specifically worked on the construction details, planting
 plan, and produced the CAD documents.
 
