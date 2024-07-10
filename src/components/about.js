@@ -2,9 +2,7 @@ import { css, html, md } from "@rasch/reno"
 import { icon } from "./icon.js"
 
 const myName = html`
-<span id="name" class="name" tabindex=0 title="click for audio pronunciation">
-  Rand Schneck️ ${icon("volume-1")}
-</span>`
+<span id="name" class="name" tabindex=0>Rand Schneck️ ${icon("volume-1")}</span>`
 
 const content = md`
 Hi. My name is ${myName} (he/him). I'm a web developer living in Traverse City,
@@ -24,17 +22,20 @@ thirteen windows so I can see the gardens that I enjoy!
 `
 
 export const about = () => html`
-<div class="about card">${content}</div>
-<audio src="pronunciation.mp3"></audio>`
+<div class="about card">
+  <div class="content">${content}</div>
+  <audio src="pronunciation.mp3"></audio>
+</div>`
 
 export const aboutCSS = () => css`
 .about {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
   width: calc(100% - 2rem);
   max-width: 512px;
   margin-bottom: 3rem;
+}
+
+.about .content {
+  background-color: var(--bg);
 }
 
 .about .name {
@@ -44,7 +45,12 @@ export const aboutCSS = () => css`
   text-decoration: underline dotted;
 }
 
-.about p {
-  padding: 4% 6%;
-  background-color: var(--bg);
+.no-js .about .name {
+  display: inline;
+  cursor: default;
+  text-decoration: none;
+}
+
+.no-js .about .name .icon {
+  display: none;
 }`
