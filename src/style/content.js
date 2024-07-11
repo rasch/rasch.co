@@ -109,6 +109,34 @@ ${[1, 2, 3, 4, 5, 6].map(n => {
   margin-left: 0; /* but not for nested unordered lists */
 }
 
+.content dl {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+}
+
+.content dl dt {
+  grid-column-start: 1;
+  margin: ${g / 4}rem ${g / 4}rem ${g / 4}rem 0;
+  padding: ${g / 4}rem;
+  text-align: right;
+  box-shadow:
+    -1px 0 0 0 var(--texture),
+    1px 0 0 0 var(--texture),
+    0 -1px 0 0 var(--texture),
+    0 1px 0 0 var(--texture);
+}
+
+.content dl dd {
+  grid-column-start: 2;
+  margin: ${g / 4}rem 0 ${g / 4}rem 0;
+  padding: ${g / 4}rem;
+  box-shadow:
+    -1px 0 0 0 var(--texture),
+    1px 0 0 0 var(--texture),
+    0 -1px 0 0 var(--texture),
+    0 1px 0 0 var(--texture);
+}
+
 .content code {
   line-height: 1;
   font-family: var(--mono);
