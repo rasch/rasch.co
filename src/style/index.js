@@ -7,7 +7,7 @@ import { cardCSS } from "./card.js"
 import { textureCSS } from "./texture.js"
 import { modalCSS } from "./modal.js"
 import { animationCSS } from "./animation.js"
-import { typographyCSS } from "./content.js"
+import { contentCSS } from "./content.js"
 
 import { toggleDarkModeCSS } from "../components/toggle-dark-mode.js"
 import { iconCSS } from "../components/icon.js"
@@ -37,7 +37,7 @@ ${cardCSS()}
 ${textureCSS()}
 ${modalCSS()}
 ${animationCSS()}
-${typographyCSS()}
+${contentCSS()}
 ${iconCSS()}
 ${toggleDarkModeCSS()}
 ${homeCSS()}

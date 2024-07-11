@@ -8,7 +8,7 @@ export const customPropertiesCSS = () => css`
 
   --sans: "Montserrat", var(--system-sans);
   --serif: var(--system-serif);
-  --mono: "IBM Plex Mono", var(--system-mono);
+  --mono: var(--system-mono);
 
   --white: hsl(120 25% 95%);
   --black: hsl(180 1% 13%);
