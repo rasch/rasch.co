@@ -6,9 +6,9 @@ const myName = document.getElementById("name")
 const audio = document.querySelector("audio")
 
 if (myName && audio) {
+  myName.tabIndex = 0
   myName.title = "click for audio pronunciation"
   myName.addEventListener("click", () => audio.play())
-  myName.addEventListener("keydown", e => e.key === "Enter" && audio.play())
 }
 
 //----------------------------------------------------------------------

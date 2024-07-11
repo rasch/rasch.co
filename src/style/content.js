@@ -78,6 +78,7 @@ ${[1, 2, 3, 4, 5, 6].map(n => {
 .content mark {
   color: var(--bg);
   background-image: var(--gradient);
+  font-weight: bold;
   padding: 0 ${g / 8}rem;
 }
 

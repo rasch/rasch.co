@@ -13,7 +13,8 @@ export const customPropertiesCSS = () => css`
   --white: hsl(120 25% 95%);
   --black: hsl(180 1% 13%);
   --white-opaque: hsl(120 25% 95% / 13%);
-  --black-opaque: hsl(180 1% 13% / 33%);
+  --black-opaque: hsl(180 1% 13% / 67%);
+  --black-sheer: hsl(180 1% 13% / 17%);
 
   --fg: var(--white);
   --bg: var(--black);
@@ -21,7 +22,7 @@ export const customPropertiesCSS = () => css`
 
   --fg-light: var(--black);
   --bg-light: var(--white);
-  --texture-light: var(--black-opaque);
+  --texture-light: var(--black-sheer);
 
   --elastic: cubic-bezier(0.5, 1.25, 0.75, 1.25);
 

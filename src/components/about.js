@@ -2,7 +2,9 @@ import { css, html, md } from "@rasch/reno"
 import { icon } from "./icon.js"
 
 const myName = html`
-<span id="name" class="name" tabindex=0>Rand Schneck️ ${icon("volume-1")}</span>`
+<button type="button" tabindex="-1" id="name" class="name">
+  Rand Schneck️ ${icon("volume-1")}
+</button>`
 
 const content = md`
 Hi. My name is ${myName} (he/him). I'm a web developer living in Traverse City,
@@ -40,14 +42,21 @@ export const aboutCSS = () => css`
 
 .about .name {
   display: inline-flex;
+  align-items: center;
   gap: 0.35rem;
+  padding: 0;
+  border: none;
   cursor: pointer;
   text-decoration: underline dotted;
+  font-variant: small-caps;
+  background: none;
+  color: var(--fg);
+  user-select: text;
 }
 
 .no-js .about .name {
   display: inline;
-  cursor: default;
+  cursor: text;
   text-decoration: none;
 }
 
