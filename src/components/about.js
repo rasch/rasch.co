@@ -2,7 +2,7 @@ import { css, html, md } from "@rasch/reno"
 import { icon } from "./icon.js"
 
 const myName = html`
-<button type="button" tabindex="-1" id="name" class="name">
+<button type="button" id="name" class="name" disabled>
   Rand Schneck️ ${icon("volume-1")}
 </button>`
 

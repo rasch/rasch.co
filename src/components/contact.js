@@ -35,7 +35,7 @@ export const contact = () => html`
       ${icon("send")} ${email}
     </div>
   </div>
-  <pre class="pubkey">${pgpkey}</pre>
+  <button type="button" disabled><pre class="pubkey">${pgpkey}</pre></button>
 </div>`
 
 export const contactCSS = () => css`
@@ -64,12 +64,21 @@ export const contactCSS = () => css`
   color: var(--fg);
 }
 
-.contact .pubkey {
+.contact > button {
   max-width: calc(100% - 3rem);
+  border: unset;
+  background: unset;
+  color: inherit;
+  user-select: text;
+  cursor: text;
+}
+
+.contact .pubkey {
+  width: 100%;
   overflow-x: scroll;
+  text-align: left;
   font-family: var(--mono);
   font-size: 0.8rem;
-  text-align: left;
   opacity: 0.7;
 }
 

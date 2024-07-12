@@ -2,6 +2,8 @@ import { css, html } from "@rasch/reno"
 import { icon } from "./icon.js"
 import { g } from "./g.js"
 
+const _ = str => str.replace(/[^0-9a-zA-Z]/g, "_")
+
 /**
  * @param {import("./projects/index.js").Project} prj
  */
@@ -18,8 +20,8 @@ export const project = ({
   x = 0,
 }) => html`
 <li class="project project-${layout}${layout === "mini" ? "" : " card"}">
-  <input type="checkbox" id="${title}-prj"${disabled ? " disabled" : ""}>
-  <label for="${title}-prj">
+  <input type="checkbox" id="${_(title)}-prj"${disabled ? " disabled" : ""}>
+  <label for="${_(title)}-prj">
     <div class="project-image" style="--x:${x}px"></div>
     ${layout === "mini" ? symbol ? icon(symbol) : icon("zap") : ""}
     <div class="project-summary">
@@ -43,8 +45,8 @@ export const project = ({
         : ""
       }
       ${description}
-      <label for="${title}-prj" class="x" style="--icon-size:1.4rem">${icon("x")}</label>
-      <label for="${title}-prj" class="close btn">${icon("x")} close</label>
+      <label for="${_(title)}-prj" class="x" style="--icon-size:1.4rem">${icon("x")}</label>
+      <label for="${_(title)}-prj" class="close btn">${icon("x")} close</label>
     </div>
   </dialog>
 </li>`

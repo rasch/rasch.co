@@ -6,8 +6,8 @@ const myName = document.getElementById("name")
 const audio = document.querySelector("audio")
 
 if (myName && audio) {
-  myName.tabIndex = 0
   myName.title = "click for audio pronunciation"
+  myName.removeAttribute("disabled")
   myName.addEventListener("click", () => audio.play())
 }
 
@@ -185,9 +185,11 @@ document.addEventListener('keydown', e => {
 //----------------------------------------------------------------------
 
 if (navigator) {
-  /** @type {HTMLElement | null} */
   const pubkey = document.querySelector(".pubkey")
   const contact = document.querySelector(".contact")
+
+  /** @type {HTMLButtonElement | null | undefined} */
+  const button = contact?.querySelector(".contact > button")
 
   const writeClipboardText = async () => {
     if (contact && pubkey?.textContent) {
@@ -200,18 +202,17 @@ if (navigator) {
         maxWidth: max-content;
         margin: 1rem auto;
         padding: 0.3rem 0.6rem;
-        border: 0.1rem solid var(--fg);
+        border: 0.1rem solid currentColor;
         background: var(--bg);
         animation: 1s ease 1 fadeIn;`
 
       try {
         await navigator.clipboard.writeText(pubkey.textContent)
         div.innerHTML = "Public key copied to clipboard!"
+        div.style.color = "#97d0ed"
       } catch (e) {
         div.innerHTML = "Error: Could not copy key to clipboard."
-        div.style.color = "tomato"
-        div.style.borderColor = "tomato"
-        console.error(`ERROR: Could not copy public key to clipboard: ${e}`)
+        div.style.color = "#e89daf"
       } finally {
         contact.appendChild(div)
         setTimeout(() => contact.removeChild(div), 5000)
@@ -219,10 +220,10 @@ if (navigator) {
     }
   }
 
-  if (pubkey) {
-    pubkey.style.cursor = "pointer"
-    pubkey.title = "click to copy public key to clipboard"
-    pubkey.addEventListener("click", writeClipboardText)
+  if (button) {
+    button.title = "click to copy public key to clipboard"
+    button.removeAttribute("disabled")
+    button.addEventListener("click", writeClipboardText)
   }
 }
 
