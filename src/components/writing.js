@@ -22,7 +22,7 @@ export const writing = posts => html`
     }
     <li>
       <a href="/writing" class="writing-index-link" style="--icon-size:1rem;">
-        ${icon("arrow-right")} see all articles
+        ${icon("list")} see all articles
       </a>
     </li>
   </ul>
