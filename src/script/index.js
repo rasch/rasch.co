@@ -221,36 +221,54 @@ if (themeToggle) {
 // Content Style and Vertical Rythm
 //----------------------------------------------------------------------
 
-const html = document.querySelector("html")
+/**
+ * @param {HTMLImageElement} e
+ */
+const setImageMargin = e => {
+  const html = document.querySelector("html")
 
-// Align images on vertical grid
-if (html) {
-  const style = window.getComputedStyle(html).getPropertyValue('font-size')
-  const fontSize = parseFloat(style)
+  if (!html) return
+
+  const fs = window.getComputedStyle(html).getPropertyValue('font-size')
+  const fontSize = parseFloat(fs)
   const g = (1 + Math.sqrt(5)) / 2
+  const ht = e.clientHeight
+  const margin = (Math.ceil(ht / (g * fontSize)) * (g * fontSize) - ht) / 2
 
-  document.querySelectorAll(".content img")
-  .forEach(img => img.addEventListener("load", e => {
-    const ht = /** @type {HTMLImageElement} */ (e.target).clientHeight
-    const height = Math.floor(ht / (g * fontSize)) * (g * fontSize)
-    ;/** @type {HTMLImageElement} */ (e.target).style.height = `${height}px`
-
-    // const margin = Math.ceil(ht / (g * fontSize)) * (g * fontSize) - ht
-    // e.target.style.marginBottom = `${margin}px`
-  }))
+  e.style.marginTop = `${margin}px`
+  e.style.marginBottom = `${margin}px`
 }
 
-// Show vertical grid by pressing "#"
-document.addEventListener("keydown", e => {
-  if (e.key === "#") {
-    document.querySelectorAll(".content")
-    .forEach(c => c.classList.toggle("content-grid"))
-  }
+// Align images on vertical grid
+document.querySelectorAll(".content img").forEach(img =>
+  img.addEventListener("load", () =>
+    setImageMargin(/** @type {HTMLImageElement} */ (img))
+  )
+)
+
+/** @type {number} */
+let debounce
+
+window.addEventListener("resize", () => {
+  clearTimeout(debounce)
+  debounce = setTimeout(
+    () => document.querySelectorAll(".content img").forEach(img =>
+      setImageMargin(/** @type {HTMLImageElement} */ (img))
+    ),
+    250
+  )
 })
+
+// Show vertical grid by pressing "#"
+document.addEventListener("keydown", e => e.key === "#" &&
+  document
+    .querySelectorAll(".content")
+    .forEach(c => c.classList.toggle("content-grid"))
+)
 
 // Add class to task list items for styling
 document
   .querySelectorAll(".content li > input[type=checkbox]")
-  .forEach(li => {
-    /** @type {HTMLElement} */ (li.parentNode).classList.add("task-list-item")
-  })
+  .forEach(li => /** @type {HTMLElement} */ (li.parentNode)
+    .classList.add("task-list-item")
+  )

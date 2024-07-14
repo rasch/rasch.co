@@ -8,8 +8,9 @@ export const contentCSS = () => css`
   line-height: ${g};
   padding: ${g}rem;
 
+  max-width: 40rem;
+  margin: 0 auto;
   position: relative;
-  max-width: 768px;
   font-family: var(--sans);
   font-variant-numeric: "oldstyle-nums";
 }
@@ -25,7 +26,7 @@ export const contentCSS = () => css`
   top: 0;
   right: 0;
   display: inline-block;
-  margin: 0.5rem;
+  margin-right: 0.5rem;
   font-size: 0.9rem;
 }
 
@@ -153,6 +154,7 @@ ${[1, 2, 3, 4, 5, 6].map(n => {
 .content pre > code {
   margin: 0;
   padding: 0;
+  line-height: ${g};
   background-color: unset;
 }
 
