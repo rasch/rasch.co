@@ -41,12 +41,12 @@ export const projectsMoreCSS = () => css`
 
 .projects-more ul {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, 320px);
+  align-items: center;
   justify-content: center;
-  justify-items: center;
   gap: 1rem;
   width: 100%;
-  max-width: 1500px;
+  max-width: 1400px;
   padding: 1rem;
 }
 
