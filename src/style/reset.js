@@ -11,8 +11,9 @@ export const resetCSS = () => css`
   margin: 0;
 }
 
+html,
 body {
-  min-height: 100vh;
+  height: 100%;
 }
 
 body {
