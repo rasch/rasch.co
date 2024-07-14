@@ -5,7 +5,6 @@ import { baseCSS } from "./base.js"
 import { pageCSS } from "./page.js"
 import { cardCSS } from "./card.js"
 import { textureCSS } from "./texture.js"
-import { modalCSS } from "./modal.js"
 import { animationCSS } from "./animation.js"
 import { contentCSS } from "./content.js"
 
@@ -35,7 +34,6 @@ ${baseCSS()}
 ${pageCSS()}
 ${cardCSS()}
 ${textureCSS()}
-${modalCSS()}
 ${animationCSS()}
 ${contentCSS()}
 ${iconCSS()}

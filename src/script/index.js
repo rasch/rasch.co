@@ -91,48 +91,17 @@ const consoleMessage = () => {
 consoleMessage()
 
 //----------------------------------------------------------------------
-// Modal (works without JS, but JS makes the UX a little more polished)
+// Modal (works without JS, but make the UX a little more polished)
 //----------------------------------------------------------------------
 
-const body = document.querySelector("body")
-const projects = document.querySelector("#projects")
+const close = () =>
+  document.querySelector(".project > details[open]")?.removeAttribute("open")
 
-if (body && projects) {
-  const modalOpen = () => projects.querySelector(
-    ".project input[type='checkbox']:checked ~ dialog .project-details"
-  )
+document.addEventListener("keydown", e => (e.key === "Escape") && close())
 
-  // Handle back button if modal was open since "change" event doesn't fire.
-  if (modalOpen()) body.style.overflow = "hidden"
-
-  // Close modal when escape key is pressed.
-  document.addEventListener("keydown", e => {
-    if (e.key === "Escape") {
-      /** @type {HTMLInputElement | null} */
-      const modal = projects
-        .querySelector('.project input[type="checkbox"]:checked')
-
-      if (modal) {
-        modal.checked = false
-        body.style.overflow = "unset"
-      }
-    }
-  })
-
-  // Scroll to top of modal on open.
-  // Prevent body scroll while modal is open.
-  projects.addEventListener("change", e => {
-    if (/** @type {HTMLInputElement} */ (e.target).checked) {
-      const details = modalOpen()
-
-      if (details) details.scrollTop = 0
-      body.style.overflow = "hidden"
-
-    } else {
-      body.style.overflow = "unset"
-    }
-  })
-}
+document
+  .querySelectorAll("details > .details button.close")
+  .forEach(btn => btn.addEventListener("click", close))
 
 //----------------------------------------------------------------------
 // Konami Code
