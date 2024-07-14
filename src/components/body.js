@@ -14,8 +14,10 @@ export const body = data => html`
     document.querySelector("body").classList.remove("no-js")
   </script>
   ${toggleDarkMode()}
-  ${home(data.posts)}
-  ${projects(data.projects)}
-  ${photos()}
-  ${whoami()}
+  <div class="theme-wrapper">
+    ${home(data.posts)}
+    ${projects(data.projects)}
+    ${photos()}
+    ${whoami()}
+  </div>
 </body>`

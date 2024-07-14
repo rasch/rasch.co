@@ -202,20 +202,18 @@ if (navigator) {
 
 /** @type {HTMLInputElement | null} */
 const themeToggle = document.querySelector("#toggle-dark-mode")
+const themeToggleBtn = document.querySelector("button.toggle-theme")
 
-if (themeToggle) {
-  if (localStorage.getItem("theme") === "light") {
-    themeToggle.checked = true
-  }
-
-  themeToggle.addEventListener("change", e => {
-    if (/** @type {HTMLInputElement} */ (e.target).checked) {
-      localStorage.setItem("theme", "light")
-    } else {
-      localStorage.setItem("theme", "dark")
-    }
-  })
+if (localStorage?.getItem("theme") === "light") {
+  if (themeToggle) themeToggle.checked = true
 }
+
+themeToggle?.addEventListener("change", () => {
+  localStorage.setItem("theme", themeToggle.checked ? "light" : "dark")
+})
+
+themeToggleBtn?.addEventListener("click", () => themeToggle?.click())
+
 
 //----------------------------------------------------------------------
 // Content Style and Vertical Rythm
