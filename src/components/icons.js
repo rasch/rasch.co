@@ -27,13 +27,6 @@ const iconArray = [
 <path d="M5 12H2a10 10 0 0 0 20 0h-3" />`,
   },
   {
-    title: "arrow-left-circle",
-    body: html`
-<circle cx="12" cy="12" r="10" />
-<polyline points="12 8 8 12 12 16" />
-<line x1="16" y1="12" x2="8" y2="12" />`,
-  },
-  {
     title: "arrow-right",
     body: html`
 <line x1="5" y1="12" x2="19" y2="12" />
@@ -210,6 +203,16 @@ const iconArray = [
     title: "codeberg", /* not from Feather */
     body: html`
 <path d="M11.955.49A12 12 0 0 0 0 12.49a12 12 0 0 0 1.832 6.373L11.838 5.928a.187.14 0 0 1 .324 0l10.006 12.935A12 12 0 0 0 24 12.49a12 12 0 0 0-12-12 12 12 0 0 0-.045 0zm.375 6.467l4.416 16.553a12 12 0 0 0 5.137-4.213z"/>`,
+  },
+  {
+    title: "list",
+    body: html`
+<line x1="8" x2="21" y1="6" y2="6" />
+<line x1="8" x2="21" y1="12" y2="12" />
+<line x1="8" x2="21" y1="18" y2="18" />
+<line x1="3" x2="3.01" y1="6" y2="6" />
+<line x1="3" x2="3.01" y1="12" y2="12" />
+<line x1="3" x2="3.01" y1="18" y2="18" />`
   },
 ]
 
