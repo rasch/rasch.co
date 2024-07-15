@@ -77,7 +77,7 @@ ${[1, 2, 3, 4, 5, 6].map(n => {
 }
 
 .content mark {
-  color: var(--bg);
+  color: var(--black);
   background-image: var(--gradient);
   font-weight: bold;
   padding: 0 ${g / 8}rem;
@@ -211,9 +211,8 @@ ${[1, 2, 3, 4, 5, 6].map(n => {
 
 .content kbd {
   padding: 0 6px;
-  margin: 0 ${g/8}rem;
+  margin: 0 ${g / 8}rem;
   border-radius: 1px;
-  font-size: 0.9em;
   font-weight: bold;
   font-variant: small-caps;
   box-shadow:
