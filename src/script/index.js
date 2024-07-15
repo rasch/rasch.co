@@ -204,16 +204,11 @@ if (navigator) {
 const themeToggle = document.querySelector("#toggle-dark-mode")
 const themeToggleBtn = document.querySelector("button.toggle-theme")
 
-if (localStorage?.getItem("theme") === "light") {
-  if (themeToggle) themeToggle.checked = true
-}
-
 themeToggle?.addEventListener("change", () => {
   localStorage.setItem("theme", themeToggle.checked ? "light" : "dark")
 })
 
 themeToggleBtn?.addEventListener("click", () => themeToggle?.click())
-
 
 //----------------------------------------------------------------------
 // Content Style and Vertical Rythm

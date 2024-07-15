@@ -27,7 +27,11 @@ const svg = (mask = "mask") => html`
 </svg>`
 
 export const toggleDarkMode = () => html`
-<input id="toggle-dark-mode" type="checkbox">`
+<input id="toggle-dark-mode" type="checkbox">
+<script>
+document.querySelector("#toggle-dark-mode").checked =
+  localStorage?.getItem("theme") === "light"
+</script>`
 
 export const toggleDarkModeButton = () => html`
 <label for="toggle-dark-mode" class="toggle-theme" title="switch theme">
