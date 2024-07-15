@@ -13,6 +13,6 @@ export const head = data => html`
   <meta name="viewport" content="width=device-width, initial-scale=1">
   ${openGraph(data)}
   ${favicon()}
-  <link rel="stylesheet" href="style.css">
-  <script type="module" src="index.js"></script>
+  <link rel="stylesheet" href="/style.css">
+  <script type="module" src="/index.js"></script>
 </head>`

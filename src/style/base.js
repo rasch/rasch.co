@@ -10,7 +10,7 @@ body {
   color: var(--fg);
 }
 
-h2 {
+h2.texture {
   margin-bottom: 3rem;
   padding: 2rem;
   border-top: 1px solid currentColor;

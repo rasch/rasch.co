@@ -6,7 +6,10 @@ import { pageCSS } from "./page.js"
 import { cardCSS } from "./card.js"
 import { textureCSS } from "./texture.js"
 import { animationCSS } from "./animation.js"
+import { admonitionCSS } from "../components/admonition.js"
+import { inlineListCSS } from "../components/inline-list.js"
 import { contentCSS } from "./content.js"
+import { fontScale } from "./font-scale.js"
 
 import { toggleDarkModeCSS } from "../components/toggle-dark-mode.js"
 import { iconCSS } from "../components/icon.js"
@@ -25,6 +28,7 @@ import { whoamiCSS } from "../components/whoami.js"
 import { aboutCSS } from "../components/about.js"
 import { profileCSS } from "../components/profile.js"
 import { contactCSS } from "../components/contact.js"
+import { navigationMiniCSS } from "../components/navigation-mini.js"
 
 export const style = `
 ${importFontsCSS()}
@@ -35,7 +39,10 @@ ${pageCSS()}
 ${cardCSS()}
 ${textureCSS()}
 ${animationCSS()}
+${admonitionCSS()}
+${inlineListCSS()}
 ${contentCSS()}
+${fontScale()}
 ${iconCSS()}
 ${toggleDarkModeCSS()}
 ${homeCSS()}
@@ -52,4 +59,5 @@ ${photoCSS()}
 ${whoamiCSS()}
 ${profileCSS()}
 ${aboutCSS()}
-${contactCSS()}`
+${contactCSS()}
+${navigationMiniCSS()}`
