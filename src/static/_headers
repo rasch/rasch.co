@@ -1,2 +1,5 @@
 /.well-known/openpgpkey/hu/yoshewjxwxj3dtezbu34waxgwahxoo4n
   Access-Control-Allow-Origin: *
+
+/feed.json
+  Content-Type: "application/feed+json"
