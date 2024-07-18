@@ -32,12 +32,14 @@ import { navigationMiniCSS } from "../components/navigation-mini.js"
 import { postIndexCSS } from "../components/post-index.js"
 import { postCardCSS } from "../components/post-card.js"
 import { postTagsCSS } from "../components/post-tags.js"
+import { screenReaderOnly } from "./screen-reader.js"
 
 export const style = `
 ${importFontsCSS()}
 ${resetCSS()}
 ${customPropertiesCSS()}
 ${baseCSS()}
+${screenReaderOnly()}
 ${pageCSS()}
 ${cardCSS()}
 ${textureCSS()}
