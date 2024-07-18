@@ -17,8 +17,8 @@ ${head(post)}
       <h1>${post.title || post.path || post._path}</h1>
       ${post.content}
       <p class="post-date">
-        <time datetime="${(post.date || post._stat.mtime)?.toISOString()}">
-          ${(post.date || post._stat.mtime)?.toDateString()}
+        <time datetime="${new Date(post.date || post._stat.mtimeMs)?.toISOString()}">
+          ${new Date(post.date || post._stat.mtimeMs)?.toDateString()}
         </time>
       </p>
     </article>

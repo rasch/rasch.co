@@ -8,8 +8,8 @@ export const postCard = post => html`
   <div class="background">
     <a href="/${post.path || post._path}">
       <div class="body">
-        <time datetime="${(post.date || post._stat.mtime)?.toISOString()}">
-          ${(post.date || post._stat.mtime)?.toDateString()}
+        <time datetime="${new Date(post.date || post._stat.mtimeMs)?.toISOString()}">
+          ${new Date(post.date || post._stat.mtimeMs)?.toDateString()}
         </time>
         <p>${post.title || post._path}</p>
       </div>
