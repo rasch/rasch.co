@@ -77,19 +77,19 @@ export const admonitionCSS = () => css`
 .admonition.info,
 .admonition.tip,
 .admonition.question {
-  --color: #93b0e7;
+  --color: var(--blue);
 }
 
 .admonition.success {
-  --color: #97d0ed;
+  --color: var(--green);
 }
 
 .admonition.warning,
 .admonition.bug {
-  --color: #f2dacb;
+  --color: var(--yellow);
 }
 
 .admonition.failure,
 .admonition.danger {
-  --color: #e89daf;
+  --color: var(--red);
 }`

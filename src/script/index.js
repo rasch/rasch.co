@@ -178,10 +178,10 @@ if (navigator) {
       try {
         await navigator.clipboard.writeText(pubkey.textContent)
         div.innerHTML = "Public key copied to clipboard!"
-        div.style.color = "#97d0ed"
+        div.style.color = "var(--green)"
       } catch (e) {
         div.innerHTML = "Error: Could not copy key to clipboard."
-        div.style.color = "#e89daf"
+        div.style.color = "var(--red)"
       } finally {
         contact.appendChild(div)
         setTimeout(() => contact.removeChild(div), 5000)
