@@ -22,7 +22,7 @@ writePage({
 
 writePage({
   path: "writing",
-  template: "notebook-template.js",
+  description: "the blog of rand schneck",
   date: new Date(),
   content: postIndex(filteredPosts),
 })

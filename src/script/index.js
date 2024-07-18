@@ -265,3 +265,31 @@ document
   .forEach(li => /** @type {HTMLElement} */ (li.parentNode)
     .classList.add("task-list-item")
   )
+
+//----------------------------------------------------------------------
+// Filter Posts By Tag
+//----------------------------------------------------------------------
+
+const form = document.querySelector("form.post-tags")
+
+form?.addEventListener("change", () => {
+  /** @type {HTMLInputElement | null} */
+  const checked = form.querySelector('fieldset input[name="tag"]:checked')
+
+  /** @type {NodeListOf<HTMLDataElement>} */
+  const posts = document.querySelectorAll(".post-index ul.posts li")
+
+  const value = checked?.value
+
+  if (!value) return
+
+  posts.forEach(p => {
+    const tags = p.dataset.tags?.split(",")
+    if (tags?.includes(value) || value === "all") {
+      p.style.display = "revert"
+      p.style.animation = "1024ms ease fadeIn"
+    } else {
+      p.style.display = "none"
+    }
+  })
+})

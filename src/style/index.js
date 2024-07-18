@@ -29,6 +29,9 @@ import { aboutCSS } from "../components/about.js"
 import { profileCSS } from "../components/profile.js"
 import { contactCSS } from "../components/contact.js"
 import { navigationMiniCSS } from "../components/navigation-mini.js"
+import { postIndexCSS } from "../components/post-index.js"
+import { postCardCSS } from "../components/post-card.js"
+import { postTagsCSS } from "../components/post-tags.js"
 
 export const style = `
 ${importFontsCSS()}
@@ -60,4 +63,7 @@ ${whoamiCSS()}
 ${profileCSS()}
 ${aboutCSS()}
 ${contactCSS()}
-${navigationMiniCSS()}`
+${navigationMiniCSS()}
+${postIndexCSS()}
+${postCardCSS()}
+${postTagsCSS()}`
