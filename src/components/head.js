@@ -19,5 +19,7 @@ export const head = data => html`
   ${openGraph({ description, ...data })}
   ${favicon()}
   <link rel="stylesheet" href="/style.css">
+  <link rel="alternate" href="/feed.json" type="application/feed+json" title="Rand Schneck">
+  <link rel="alternate" href="/feed.xml" type="application/atom+xml" title="Rand Schneck">
   <script type="module" src="/index.js"></script>
 </head>`

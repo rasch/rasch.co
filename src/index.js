@@ -4,7 +4,7 @@ import { index } from "./components/index.js"
 import { postIndex } from "./components/post-index.js"
 import { style } from "./style/index.js"
 import { icons } from "./components/icons.js"
-import { feedJSON } from "./components/feed.js"
+import { generateFeed } from "./components/feed.js"
 
 // sort posts in reverse chronological order
 data.posts.sort((a, b) =>
@@ -31,4 +31,8 @@ writePage({
 writePosts(filteredPosts)
 write("dist/style.css")(style)
 write("dist/icons.svg")(icons())
-write("dist/feed.json")(await feedJSON({ ...data, posts: filteredPosts }))
+
+const feed = generateFeed({ ...data, posts: filteredPosts })
+
+write("dist/feed.json")(await feed("json"))
+write("dist/feed.xml")(await feed("atom"))

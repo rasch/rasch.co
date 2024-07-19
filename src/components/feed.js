@@ -1,4 +1,4 @@
-import { stringify } from "@rasch/reno"
+import { html, stringify } from "@rasch/reno"
 
 const name = "Rand Schneck"
 const url = "https://www.rasch.co"
@@ -6,7 +6,7 @@ const url = "https://www.rasch.co"
 /**
  * @param {import("./data.js").SiteData} data
  */
-const feed = data => ({
+const jsonFeed = data => stringify({
   version: "https://jsonfeed.org/version/1.1",
   title: data.title,
   home_page_url: url,
@@ -38,6 +38,52 @@ const feed = data => ({
 })
 
 /**
+ * @param {string} str
+ */
+const escapeHTML = str => str
+  .replace(/&/g, "&amp;")
+  .replace(/</g, "&lt;")
+  .replace(/>/g, "&gt;")
+  .replace(/"/g, "&quot;")
+  .replace(/'/g, "&#039;")
+
+/**
+ * @param {import("@rasch/reno").Post} p
+ */
+const entry = p => html`
+<entry>
+  <title>${p.title}</title>
+  <link href="${url}/${p.path || p._path}"/>
+  <id>${url}/${p.path || p._path}</id>
+  <updated>${(new Date(p.modified || p.date || p._stat.mtimeMs)).toISOString()}</updated>
+  <published>${(new Date(p.date || p._stat.mtimeMs)).toISOString()}</published>
+  <summary>${p.description || ""}</summary>
+  <content type="html">${escapeHTML(p.content)}</content>
+  ${/** @type {string[]} */ (p.tags || []).map(t => `<category term="${t}"/>`).join("")}
+</entry>`
+
+/**
  * @param {import("./data.js").SiteData} data
  */
-export const feedJSON = data => stringify(feed(data))
+const atom = data => html`<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>${data.title}</title>
+  <subtitle></subtitle>
+  <icon>${url}/icon.png</icon>
+  <link href="${url}/writing"/>
+  <link rel="self" href="${url}/atom.xml"/>
+  <updated>${(new Date()).toISOString()}</updated>
+  <author>
+    <name>${name}</name>
+    <uri>${url}</uri>
+  </author>
+  <id>${url}/writing</id>
+  ${data.posts.map(entry).join("")}
+</feed>`
+
+/**
+ * @param {import("./data.js").SiteData} data
+ * @returns {(type: "json" | "atom" | "xml") => Promise<string>}
+ */
+export const generateFeed = data => async type =>
+  type === "json" ? jsonFeed(data) : atom(data)
