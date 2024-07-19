@@ -5,10 +5,15 @@ import { html, css } from "@rasch/reno"
  */
 const tagArray = posts => {
   const tags = posts.reduce((a, c) => a.concat(c.tags || []), [])
-  const unique = new Set(/** @type {string[]} */  (tags))
+  const unique = new Set(/** @type {string[]} */ (tags))
 
   return Array.from(unique).sort()
 }
+
+/**
+ * @param {string} str
+ */
+const _ = str => str.replace(/[^\w]/g, "_")
 
 /**
  * @param {import("@rasch/reno").Post[]} posts
@@ -20,8 +25,8 @@ export const postTags = posts => html`
     <input type="radio" id="all" name="tag" value="all" checked />
     <label for="all">all posts</label>
     ${tagArray(posts).map(tag => `
-      <input type="radio" id="${tag}" name="tag" value="${tag}" />
-      <label for="${tag}">${tag}</label>
+      <input type="radio" id="${_(tag)}" name="tag" value="${tag}" />
+      <label for="${_(tag)}">${tag}</label>
     `).join("")}
   </fieldset>
 </form>`
@@ -37,20 +42,30 @@ export const postTagsCSS = () => css`
 }
 
 .post-tags fieldset input[type="radio"] {
-  display: none;
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+}
+
+.post-tags fieldset input[type="radio"]:focus + label {
+  outline: medium auto currentColor;
+  outline: medium auto invert;
+  outline: 5px auto -webkit-focus-ring-color;
 }
 
 .post-tags fieldset label {
   padding: 0 0.35rem;
   border: 1px solid currentColor;
   margin: 0.35rem;
+  cursor: pointer;
+  transition: 512ms ease-in-out;
 }
 
 .post-tags fieldset input:checked + label,
 #toggle-dark-mode:checked ~ .theme-wrapper .post-tags fieldset label {
   border: 1px solid currentColor;
   color: var(--black);
-  opacity: 0.6;
+  opacity: 0.73;
 }
 
 #toggle-dark-mode:checked ~ .theme-wrapper .post-tags fieldset input:checked + label {
