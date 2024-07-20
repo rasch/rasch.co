@@ -5,6 +5,7 @@ import { postIndex } from "./components/post-index.js"
 import { style } from "./style/index.js"
 import { icons } from "./components/icons.js"
 import { generateFeed } from "./components/feed.js"
+import { pageNotFound } from "./components/404.js"
 
 // sort posts in reverse chronological order
 data.posts.sort((a, b) =>
@@ -36,3 +37,4 @@ const feed = generateFeed({ ...data, posts: filteredPosts })
 
 write("dist/feed.json")(await feed("json"))
 write("dist/feed.xml")(await feed("atom"))
+write("dist/404.html")(pageNotFound(data))
