@@ -2,6 +2,7 @@ import { html } from "@rasch/reno"
 import { head } from "./head.js"
 import { toggleDarkMode } from "./toggle-dark-mode.js"
 import { navigationMini } from "./navigation-mini.js"
+import { giscus } from "./giscus.js"
 
 /**
  * @param {import("@rasch/reno").Post} post
@@ -22,6 +23,7 @@ ${head(post)}
         </time>
       </p>
     </article>
+    ${post.comments ? giscus() : ""}
   </div>
 </body>
 </html>`
