@@ -2,9 +2,9 @@ import { html } from "@rasch/reno"
 
 const style = `
 max-width: 40rem;
-padding: 1rem;
+padding: 3rem 1rem;
 border-top: 1px dotted;
-margin: 3rem auto;
+margin: 0 auto;
 `.replace(/\n/g, "")
 
 export const giscus = () => html`
@@ -22,9 +22,27 @@ export const giscus = () => html`
     data-input-position="bottom"
     data-theme="transparent_dark"
     data-lang="en"
-    data-loading="lazy"
     crossorigin="anonymous"
     async
   >
   </script>
-</div>`
+</div>
+<script>
+const checkbox = document.querySelector("#toggle-dark-mode")
+const getGiscusTheme = () => checkbox.checked ? "light" : "transparent_dark"
+const setGiscusTheme = theme => {
+  const iframe = document.querySelector("iframe.giscus-frame")
+
+  iframe
+    ? iframe.contentWindow.postMessage(
+        { giscus: { setConfig: { theme }}},
+        "https://giscus.app"
+      )
+    : document
+        .querySelector('script[src="https://giscus.app/client.js"]')
+        .setAttribute("data-theme", theme)
+}
+
+setGiscusTheme(getGiscusTheme())
+checkbox.addEventListener("change", () => setGiscusTheme(getGiscusTheme()))
+</script>`
