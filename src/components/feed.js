@@ -12,8 +12,8 @@ const jsonFeed = data => stringify({
   home_page_url: url,
   feed_url: `${url}/feed.json`,
   description: data.description,
-  icon: `${url}/icon.png`,
-  favicon: `${url}/icon.svg`,
+  icon: `${url}/favicon-512x512.png`,
+  favicon: `${url}/favicon-64x64.png`,
   authors: [
     {
       name,
@@ -69,7 +69,7 @@ const atom = data => html`<?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>${data.title}</title>
   <subtitle></subtitle>
-  <icon>${url}/icon.png</icon>
+  <icon>${url}/favicon-64x64.png</icon>
   <link href="${url}/writing"/>
   <link rel="self" href="${url}/atom.xml"/>
   <updated>${(new Date()).toISOString()}</updated>

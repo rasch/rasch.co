@@ -17,6 +17,17 @@ build_assets() {
     dist
 }
 
+build_favicons() {
+  magick media/favicon.png -filter point -resize 50% dist/favicon-16x16.png
+  magick media/favicon.png -filter point -resize 100% dist/favicon-32x32.png
+  magick media/favicon.png -filter point -resize 200% dist/favicon-64x64.png
+  magick media/favicon.png -filter point -resize 562.5% dist/favicon-180x180.png
+  magick media/favicon.png -filter point -resize 600% dist/favicon-192x192.png
+  magick media/favicon.png -filter point -resize 1600% dist/favicon-512x512.png
+
+  magick dist/favicon-16x16.png dist/favicon-32x32.png dist/favicon.ico
+}
+
 build_sprite() {
   mkdir -p dist/i
   gm convert -background black +append \
@@ -45,6 +56,7 @@ build_images() {
 build() {
   build_site
   build_assets
+  build_favicons
   build_sprite
   build_images
 }
