@@ -30,7 +30,7 @@ build_favicons() {
 
 build_sprite() {
   mkdir -p dist/i
-  gm convert -background black +append \
+  magick -background black \
     media/sprite/phalanx.jpg \
     media/sprite/today.jpg \
     media/sprite/transactions.jpg \
@@ -40,6 +40,7 @@ build_sprite() {
     media/sprite/reno.jpg \
     media/sprite/pomodoro.jpg \
     media/sprite/speed.jpg \
+    +append \
     dist/i/sprite.jpg
 }
 
@@ -47,7 +48,7 @@ build_images() {
   for img in media/images/*.jpg; do
     for size in 1600 1200 600; do
       mkdir -p dist/i/"$size"
-      gm convert "$img" -resize "${size}x${size}>" +profile "*" \
+      magick "$img" -resize "${size}x${size}>" +profile "*" \
         dist/i/"$size"/"${img##*/}"
     done
   done
