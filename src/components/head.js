@@ -13,7 +13,7 @@ this post. It probably has something to do with programming though.
 export const head = data => html`
 <head>
   <meta charset="utf-8">
-  <title>${data.title}</title>
+  <title>${data.title || data.path}</title>
   <meta name="description" content="${data.description || description}">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   ${openGraph({ description, ...data })}
