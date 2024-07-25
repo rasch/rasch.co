@@ -11,18 +11,16 @@ export const project = ({
   description,
   layout,
   links,
-  symbol,
   disabled,
   image,
   alt = "",
   x = 0,
 }) => html`
-<li class="project ${layout}${layout === "mini" ? "" : " card"}">
+<li class="project card ${layout}">
   <details>
     <summary>
       <header>
         <div class="image" style="--x:${x}px"></div>
-        ${layout === "mini" ? symbol ? icon(symbol) : icon("zap") : ""}
       </header>
       <article>
         <h3>${title}</h3>
@@ -159,10 +157,6 @@ html:has(details[open]) {
   height: 160px;
 }
 
-.project.mini > details > summary > header .image {
-  display: none;
-}
-
 .project > details > summary p {
   line-height: 1.3;
   font-size: 0.9rem;
@@ -170,10 +164,6 @@ html:has(details[open]) {
 
 .project.featured > details > summary p {
   line-height: ${g};
-  font-size: 1rem;
-}
-
-.project.mini > details > summary p {
   font-size: 1rem;
 }
 
@@ -185,27 +175,12 @@ html:has(details[open]) {
   padding: 0.5rem 1rem;
 }
 
-.project.mini > details > summary > article {
-  margin-left: 0.5rem;
-  padding: 0;
-}
-
 .project > details > summary > article h3 {
   font-size: 1rem;
 }
 
 .project.featured > details > summary > article h3 {
   font-size: 1.2rem;
-}
-
-.project.mini > details > summary > article h3 {
-  margin-bottom: 0.35rem;
-  line-height: 1;
-  font-size: 1.2rem;
-}
-
-.project.mini:hover > details > summary > article h3 {
-  text-decoration: underline;
 }
 
 .project > details > summary > footer {
@@ -215,10 +190,6 @@ html:has(details[open]) {
   display: flex;
   align-items: center;
   gap: 0.4rem;
-}
-
-.project.mini > details > summary > footer {
-  display: none;
 }
 
 .project:hover > details > summary > footer {

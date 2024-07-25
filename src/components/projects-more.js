@@ -1,23 +1,12 @@
 import { css, html } from "@rasch/reno"
 import { icon } from "./icon.js"
-import { project } from "./project.js"
 
-/**
- * @param {import("./projects/index.js").Project[]} projects
- */
-export const projectsMore = projects => html`
+export const projectsMore = () => html`
 <section class="projects-more">
   <div class="card">
-    <h2>${icon("file-text")} more</h2>
+    <h2>${icon("activity")} more</h2>
   </div>
-  <ul>
-    ${
-      projects
-      .filter(p => p.layout === "mini")
-      .map(project)
-      .join("")
-    }
-  </ul>
+  <div class="content">${content}</div>
 </section>`
 
 export const projectsMoreCSS = () => css`
@@ -39,18 +28,7 @@ export const projectsMoreCSS = () => css`
   font-size: 1.5rem;
 }
 
-.projects-more ul {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, 320px);
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
-  width: 100%;
-  max-width: 1400px;
+.projects-more p {
+  max-width: 40rem;
   padding: 1rem;
-}
-
-.projects-more ul li {
-  list-style-type: none;
-  padding: 0;
 }`

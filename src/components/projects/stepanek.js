@@ -8,8 +8,7 @@ export const stepanek = {
   summary: md`Peace Garden`,
   image: "i/600/stepanek.jpg",
   alt: "The sculptures of Mattie and his service dog, Micah, are in the center of the park along with two concrete chess tables.",
-  layout: "mini",
-  symbol: "star",
+  x: -1760,
   description: md`
 <q class="center">Remember to play after every storm.</q>
 

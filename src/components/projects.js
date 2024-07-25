@@ -23,13 +23,13 @@ export const projects = projects => html`
     >
       ${
         projects
-        .filter(p => p.layout === "normal")
+        .filter(p => p.layout !== "featured")
         .map(project)
         .join("")
       }
     </ul>
   </div>
-  ${projectsMore(projects)}
+  ${projectsMore()}
 </div>`
 
 export const projectsCSS = () => css`
