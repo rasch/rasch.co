@@ -40,6 +40,9 @@ build_sprite() {
     media/sprite/reno.jpg \
     media/sprite/pomodoro.jpg \
     media/sprite/speed.jpg \
+    media/sprite/eekwhales.jpg \
+    media/sprite/climodules.jpg \
+    media/sprite/stepanek.jpg \
     +append \
     dist/i/sprite.jpg
 }
