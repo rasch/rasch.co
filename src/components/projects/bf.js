@@ -6,7 +6,7 @@ import { md } from "@rasch/reno"
 export const bf = {
   title: "bf",
   summary: md`brainfuck interpreter in 249 bytes of JavaScript`,
-  image: "/gifs/taffy.gif",
+  image: "/clip/taffy.gif",
   alt: "Taffy Dare (&quot;Captain Caveman and the Teen Angels&quot;) coming up with &quot;Another Daffy Taffy Plan&quot;",
   x: -1160,
   links: [
