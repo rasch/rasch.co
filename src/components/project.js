@@ -11,7 +11,6 @@ export const project = ({
   description,
   layout,
   links,
-  disabled,
   image,
   alt = "",
   x = 0,
@@ -27,8 +26,8 @@ export const project = ({
         ${summary}
       </article>
       <footer>
-        <p>${disabled ? "Coming Soon!" : "View Project"}</p>
-        ${disabled ? "" : icon("chevron-right")}
+        <p>View Project</p>
+        ${icon("chevron-right")}
       </footer>
     </summary>
     <div class="details">

@@ -1,5 +1,20 @@
-import { css, html } from "@rasch/reno"
+import { css, html, md } from "@rasch/reno"
 import { icon } from "./icon.js"
+
+const content = md`
+The projects above, with the exception of the "Mattie J.T. Stepanek Peace
+Garden", were created in my personal time and are released under various
+permissive open source licenses. I also push more code to [Sourcehut] with
+mirrors on [GitHub] and [Codeberg]. Most things are written in JavaScript (with
+JSDoc type annotations), but there are also several POSIX shell scripts. I've
+also written a fair amount of PHP and React professionally, but don't typically
+share client work due to NDAs. There's also some artsy things, such as hand
+coded SVGs and pixel art, buried throughout my repositories. Oh... and CSS is
+pretty cool too!
+
+[Sourcehut]: https://git.sr.ht/~rasch/
+[GitHub]: https://github.com/rasch
+[Codeberg]: https://codeberg.org/rasch`
 
 export const projectsMore = () => html`
 <section class="projects-more">
