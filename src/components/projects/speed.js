@@ -7,7 +7,7 @@ export const speed = {
   title: "speed",
   summary: md`speed reading in the terminal`,
   image: "/clip/speed.gif",
-  alt: "",
+  alt: "animated gif of the speed reader displaying the poem, &quot;When I Heard the Learn’d Astronomer&quot; by Walt Whitman",
   x: -1460,
   links: [
     {
