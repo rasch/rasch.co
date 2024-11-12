@@ -67,6 +67,17 @@ export const photos = () => html`
   <ul class="photos">
     ${photoArray.map(photo).join("")}
   </ul>
+  <p>
+    These photos are unedited<sup>*</sup> and were shot with cheap digital
+    cameras or phones. I don't own any fancy equipment since I'm not a
+    professional photographer, but I'm usually good at capturing moments in
+    time.
+  </p>
+  <p>
+    *<em>images have been scaled down with Imagemagick to reduce file sizes and
+    the Vail photo was originally four images that were joined together and
+    cropped</em>
+  </p>
 </div>`
 
 export const photosCSS = () => css`
@@ -80,9 +91,22 @@ export const photosCSS = () => css`
 
   max-width: 1500px;
   margin: 0 auto;
-  padding: 0 2% 6rem;
+  padding: 0 2% 3rem;
 
   list-style-type: none;
+}
+
+#photos p {
+  max-width: 42rem;
+  margin: 0 auto;
+  padding: 1rem;
+  text-align: center;
+}
+
+#photos p:last-of-type {
+  max-width: 34rem;
+  padding-bottom: 3rem;
+  font-size: 0.85rem;
 }
 
 @media screen and (min-width: 750px) {
