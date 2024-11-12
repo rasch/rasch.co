@@ -1,4 +1,61 @@
 //----------------------------------------------------------------------
+// Dicecube on Profile Image
+//----------------------------------------------------------------------
+
+import { Dicecube } from "./dicecube.js"
+
+/** @type {HTMLCanvasElement | null} */
+const canvas = document.querySelector("canvas.dicecube")
+
+if (canvas) {
+  const cube = new Dicecube(canvas, {
+    src: "profile.webp",
+  })
+
+  /** @param {Dicecube} cube */
+  const spiralTransition = cube => {
+    cube.positions.forEach(p => {
+      const distToCenter = Math.abs(p - Math.floor(cube.positions.length / 2))
+      const interval = 64 - cube.columns * 2
+
+      setTimeout(() => { cube.renderCell(p) }, distToCenter * interval)
+    })
+  }
+
+  cube.shuffle()
+  cube.init()
+
+  let clickCount = 0
+
+  canvas.addEventListener("click", () => {
+    switch (clickCount) {
+      case 5:
+        cube.resetPositions()
+        spiralTransition(cube)
+        break
+      case 6:
+        cube.loadImage("og.jpg").then(() => {
+          spiralTransition(cube)
+        })
+        break
+      case 7:
+        clickCount = 0
+        cube.loadImage("profile.webp").then(() => {
+          cube.shuffle()
+          spiralTransition(cube)
+        })
+        break
+      default:
+        cube.shuffle()
+        spiralTransition(cube)
+        break
+    }
+
+    clickCount++
+  })
+}
+
+//----------------------------------------------------------------------
 // Name Pronunciation
 //----------------------------------------------------------------------
 

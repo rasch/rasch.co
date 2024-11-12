@@ -2,7 +2,9 @@ import { css, html } from "@rasch/reno"
 
 export const profile = () => html`
 <div class="profile card">
-  <img class="dicecube" src="profile.webp" alt="me dressed as a mouse for Halloween">
+  <canvas class="dicecube">
+    <img src="profile.webp" alt="me dressed as a mouse for Halloween">
+  </canvas>
 </div>`
 
 export const profileCSS = () => css`
@@ -10,6 +12,6 @@ export const profileCSS = () => css`
   flex-shrink: 0;
 }
 
-.profile img {
+.profile canvas {
   width: 300px;
 }`

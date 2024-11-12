@@ -11,6 +11,8 @@ build_site() {
 }
 
 build_assets() {
+  cp -a node_modules/dicecube/dicecube.js src/script/
+
   cp -a \
     src/script/* src/static/* src/static/.* \
     media/profile.webp media/pronunciation.mp3 media/og.jpg media/clip \
