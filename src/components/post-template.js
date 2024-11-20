@@ -3,6 +3,7 @@ import { head } from "./head.js"
 import { toggleDarkMode } from "./toggle-dark-mode.js"
 import { navigationMini } from "./navigation-mini.js"
 import { giscus } from "./giscus.js"
+import { syntaxHighlight } from "./syntax-highlight.js"
 
 /**
  * @param {import("@rasch/reno").Post} post
@@ -25,5 +26,6 @@ ${head(post)}
     </article>
     ${post.comments ? giscus() : ""}
   </div>
+  ${post.syntaxHighlight === false ? "" : syntaxHighlight()}
 </body>
 </html>`

@@ -9,6 +9,7 @@ import { animationCSS } from "./animation.js"
 import { admonitionCSS } from "../components/admonition.js"
 import { inlineListCSS } from "../components/inline-list.js"
 import { contentCSS } from "./content.js"
+import { syntaxHighlightCSS } from "./syntax-highlight.js"
 import { fontScale } from "./font-scale.js"
 
 import { toggleDarkModeCSS } from "../components/toggle-dark-mode.js"
@@ -47,6 +48,7 @@ ${animationCSS()}
 ${admonitionCSS()}
 ${inlineListCSS()}
 ${contentCSS()}
+${syntaxHighlightCSS()}
 ${fontScale()}
 ${iconCSS()}
 ${toggleDarkModeCSS()}
