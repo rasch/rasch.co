@@ -39,7 +39,7 @@ export const reno = {
   description: md`
 Reno started as an ultra-minimal module to build HTML components using
 JavaScript template literals. This 61 byte identity function actually does
-nothing except enable syntax highlighting in supported text editors. 
+nothing except enable syntax highlighting in supported text editors.
 
 \`\`\`javascript
 export const html = (s, ...v) => String.raw({ raw: s }, ...v)

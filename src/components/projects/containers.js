@@ -66,6 +66,6 @@ have a \`firefox\` container that can mount my personal configuration, add-ons
 and history. Then when I want to test out a website, I can run the browser with
 its default configuration. These containers are used as my personal development
 environment (PDE) and there's some games too!
- 
+
 [1]: https://git.sr.ht/~rasch/containers/tree/main/item/xpod`
 }

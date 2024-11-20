@@ -53,7 +53,7 @@ there that can make an even smaller version, and if you're that person, please
 share it in the comments of my [blog post][3]. Here is my unminified
 implementation of the brainfuck [esoteric language][4].
 
-\`\`\`javascript  
+\`\`\`javascript
 for($=Array(3e4),_=[],f=u=c=k=0;
 k<B[F='length'];
 C=B[U='charCodeAt'](k++)-44,
