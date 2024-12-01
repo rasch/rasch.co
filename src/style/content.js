@@ -220,4 +220,9 @@ ${[1, 2, 3, 4, 5, 6].map(n => {
     2px 0 0 0 currentColor,
     0 -1px 0 0 currentColor,
     0 2px 0 0 currentColor;
+.content iframe[src^="https://www.youtube.com/embed"] {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: 0;
+}
 }`

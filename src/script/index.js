@@ -272,14 +272,14 @@ themeToggleBtn?.addEventListener("click", () => themeToggle?.click())
 //----------------------------------------------------------------------
 
 /**
- * @param {HTMLImageElement} e
+ * @param {HTMLImageElement | HTMLIFrameElement} e
  */
-const setImageMargin = e => {
+const setMargin = e => {
   const html = document.querySelector("html")
 
   if (!html) return
 
-  const fs = window.getComputedStyle(html).getPropertyValue('font-size')
+  const fs = window.getComputedStyle(html).getPropertyValue("font-size")
   const fontSize = parseFloat(fs)
   const g = (1 + Math.sqrt(5)) / 2
   const ht = e.clientHeight
@@ -290,20 +290,22 @@ const setImageMargin = e => {
 }
 
 // Align images on vertical grid
-document.querySelectorAll(".content img").forEach(img =>
-  img.addEventListener("load", () =>
-    setImageMargin(/** @type {HTMLImageElement} */ (img))
-  )
-)
+document
+.querySelectorAll(".content img, .content iframe")
+.forEach(i => i.addEventListener("load", () =>
+  setMargin(/** @type {HTMLImageElement | HTMLIFrameElement} */ (i))
+))
 
 /** @type {number} */
 let debounce
 
 window.addEventListener("resize", () => {
   clearTimeout(debounce)
-  debounce = setTimeout(
-    () => document.querySelectorAll(".content img").forEach(img =>
-      setImageMargin(/** @type {HTMLImageElement} */ (img))
+  debounce = setTimeout(() =>
+    document
+    .querySelectorAll(".content img, .content iframe")
+    .forEach(i =>
+      setMargin(/** @type {HTMLImageElement | HTMLIFrameElement} */ (i))
     ),
     250
   )
