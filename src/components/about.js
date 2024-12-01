@@ -45,13 +45,19 @@ export const aboutCSS = () => css`
   align-items: center;
   gap: 0.35rem;
   padding: 0;
+  margin: 0;
   border: none;
+  box-shadow: none;
   cursor: pointer;
   text-decoration: underline dotted;
   font-variant: small-caps;
   background: none;
   color: var(--fg);
   user-select: text;
+}
+
+.about button.name:hover {
+  box-shadow: none;
 }
 
 .no-js .about .name {

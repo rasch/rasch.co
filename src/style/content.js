@@ -220,6 +220,105 @@ ${[1, 2, 3, 4, 5, 6].map(n => {
     2px 0 0 0 currentColor,
     0 -1px 0 0 currentColor,
     0 2px 0 0 currentColor;
+}
+
+.content button {
+  color: var(--color, var(--fg));
+  margin: ${g / 4}rem;
+  border: 0;
+  border-radius: 0.5rem;
+  padding: ${g / 4}rem ${g / 2}rem;
+  background: none;
+  box-shadow:
+    -1px 0 0 0 currentColor,
+    2px 0 0 0 currentColor,
+    0 -1px 0 0 currentColor,
+    0 3px 0 0 currentColor;
+  --color: none;
+  text-align: center;
+  transition: box-shadow 200ms linear;
+}
+
+#toggle-dark-mode:checked ~ .theme-wrapper .content button {
+  color: var(--black);
+  background-color: var(--color, var(--fg));
+}
+
+.content button:hover:enabled {
+  box-shadow:
+    -1px 0 0 0 currentColor,
+    1px 0 0 0 currentColor,
+    0 -1px 0 0 currentColor,
+    0 2px 0 0 currentColor;
+  transition: box-shadow 300ms linear;
+}
+
+.content button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  color: var(--white);
+}
+
+#toggle-dark-mode:checked ~ .theme-wrapper .content button:disabled {
+  color: var(--black);
+  background: none;
+}
+
+.content button.green {
+  --color: var(--green);
+}
+
+.content button.blue {
+  --color: var(--blue);
+}
+
+.content button.red {
+  --color: var(--red);
+}
+
+.content button.yellow {
+  --color: var(--yellow);
+}
+
+.content .badge {
+  margin: ${g / 2}rem ${g / 8}rem;
+  padding: 0.1rem 0.4rem;
+  border-radius: 1rem;
+  font-size: 0.8rem;
+  font-weight: bold;
+  font-family: var(--sans);
+  background-color: var(--color, none);
+  box-shadow:
+    -1px 0 0 0 currentColor,
+    1px 0 0 0 currentColor,
+    0 -1px 0 0 currentColor,
+    0 1px 0 0 currentColor;
+}
+
+.content .badge.green,
+.content .badge.blue,
+.content .badge.red,
+.content .badge.yellow {
+  color: var(--black);
+  box-shadow: none;
+}
+
+.content .badge.green {
+  --color: var(--green);
+}
+
+.content .badge.blue {
+  --color: var(--blue);
+}
+
+.content .badge.red {
+  --color: var(--red);
+}
+
+.content .badge.yellow {
+  --color: var(--yellow);
+}
+
 .content iframe[src^="https://www.youtube.com/embed"] {
   width: 100%;
   aspect-ratio: 16 / 9;
