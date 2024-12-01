@@ -338,4 +338,20 @@ ${[1, 2, 3, 4, 5, 6].map(n => {
   aspect-ratio: 16 / 9;
   border: 0;
 }
+
+.content [data-footnotes] ol li p:not(:last-of-type) {
+  margin-bottom: ${g}rem;
+}
+
+.content a[data-footnote-ref],
+.content a[data-footnote-backref] {
+  box-shadow: none;
+}
+
+.content [data-footnote-ref]::before {
+  content: '[';
+}
+
+.content [data-footnote-ref]::after {
+  content: ']';
 }`
