@@ -24,10 +24,11 @@ export const customPropertiesCSS = () => css`
   --bg-light: var(--white);
   --texture-light: var(--black-sheer);
 
-  --green: #97d0ed;
-  --blue: #93b0e7;
-  --red: #e89daf;
-  --yellow: #f2dacb;
+  --green: hsl(200, 70%, 76%);
+  --blue: hsl(219, 64%, 74%);
+  --red: hsl(346 62% 76%);
+  --dark-red: hsl(346 62% 66%);
+  --yellow: hsl(23, 60%, 87%);
 
   --elastic: cubic-bezier(0.5, 1.25, 0.75, 1.25);
 
