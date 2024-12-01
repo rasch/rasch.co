@@ -187,21 +187,35 @@ ${[1, 2, 3, 4, 5, 6].map(n => {
   font-family: var(--serif);
 }
 
-.content table {
-  table-layout: fixed;
-  border-collapse: collapse;
+.content .table-wrapper {
   width: 100%;
+  overflow-x: auto;
   box-shadow:
+    0 1px 0 0 currentColor,
+    0 -1px 0 0 currentColor;
+}
+
+.content table {
+  border-collapse: collapse;
+  min-width: 100%;
+  text-align: center;
+  font-variant: tabular-nums;
+  box-shadow: /* in case JS is disabled and div.table-wrapper isn't available */
     0 1px 0 0 currentColor,
     0 -1px 0 0 currentColor;
 }
 
 .content table > thead {
   box-shadow: 0 1px 0 0 currentColor;
+  text-wrap: nowrap;
 }
 
 .content table > tbody tr:nth-child(odd) {
   background-color: var(--texture);
+}
+
+.content th {
+  letter-spacing: 2px;
 }
 
 .content th,

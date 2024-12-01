@@ -325,6 +325,14 @@ document
     .classList.add("task-list-item")
   )
 
+ // Add responsive wrapper <div> around (markdown) tables
+ document.querySelectorAll(".content table").forEach(table => {
+   const div = document.createElement("div")
+   div.classList.add("table-wrapper")
+   table.parentNode?.insertBefore(div, table)
+   div.appendChild(table)
+ })
+
 //----------------------------------------------------------------------
 // Filter Posts By Tag
 //----------------------------------------------------------------------
