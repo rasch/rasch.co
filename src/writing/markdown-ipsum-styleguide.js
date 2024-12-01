@@ -77,8 +77,8 @@ ${admonition({
   - [C](#c)
   - [CSS](#css)
 - [Images](#images)
-- [Videos](#videos)
 - [Figures](#figures)
+- [Videos](#videos)
 - [Tables](#tables)
   - [Center Aligned Table](#center-aligned-table)
   - [Left Aligned Table](#left-aligned-table)
@@ -534,6 +534,25 @@ ${placeText(4)}
 
 ![Kitty Cat](${placeImage(256)})
 
+## Figures
+
+<figure>
+  <img src="${placeImage(720, 540)}" alt="A pretty kitty">
+  <figcaption>${placeText(4)}</figcaption>
+</figure>
+
+<figure>
+  <img src="${placeImage(420, 420)}" alt="Another pretty kitty">
+  <figcaption>Hello, world!</figcaption>
+</figure>
+
+\`\`\`html
+<figure>
+  <img src="${placeImage(720, 540)}" alt="A pretty kitty">
+  <figcaption>Hello, world!</figcaption>
+</figure>
+\`\`\`
+
 ## Videos
 
 The only video type that is currently supported is an \`<iframe>\` with a
@@ -557,10 +576,6 @@ getting paid... **Bandwidth ain't free!**
   allowfullscreen
 ></iframe>
 \`\`\`
-
-## Figures
-
-TODO
 
 ## Tables
 

@@ -338,6 +338,20 @@ ${[1, 2, 3, 4, 5, 6].map(n => {
   --color: var(--yellow);
 }
 
+.content figure {
+  padding: ${g / 2}rem;
+  text-align: center;
+  box-shadow:
+    -1px 0 0 0 var(--texture),
+    1px 0 0 0 var(--texture),
+    0 -1px 0 0 var(--texture),
+    0 1px 0 0 var(--texture);
+}
+
+.content figure img {
+  margin: 0 auto;
+}
+
 .content iframe[src^="https://www.youtube.com/embed"] {
   width: 100%;
   aspect-ratio: 16 / 9;
