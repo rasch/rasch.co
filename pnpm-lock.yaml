@@ -9,16 +9,16 @@ importers:
   .:
     devDependencies:
       '@rasch/reno':
-        specifier: ^0.2.1
-        version: 0.2.1
+        specifier: ^0.3.0
+        version: 0.3.0
       dicecube:
         specifier: ^0.1.0
         version: 0.1.0
 
 packages:
 
-  '@rasch/reno@0.2.1':
-    resolution: {integrity: sha512-v0fqY3dEQ7MEBZvqG38OOq2a+TqIAcIEl8mloH6hOE0+9wnVXor2A5NSVCXOUILGVIr9OUmdab72RIzCiwRLDw==}
+  '@rasch/reno@0.3.0':
+    resolution: {integrity: sha512-5F+VtklHe0PHB9iy6KvMqHSFDx2PzigzUZK7RmNgGoX25/5Pn/x2bk7+DuzED8ArW6q7Cb9CbuNlOOWVTx2uOw==}
 
   dicecube@0.1.0:
     resolution: {integrity: sha512-CxEckCWoYjh3V6wXPywzGaKGqiDb4GBSZBC/wGr6x72gogRj8eJVWC7rCvq6dym3Oaluq4nI2X3WCD7jW086sA==}
@@ -26,30 +26,40 @@ packages:
   github-slugger@2.0.0:
     resolution: {integrity: sha512-IaOQ9puYtjrkq7Y0Ygl9KDZnrf/aiUJYUpVf89y8kyaxbRG7Y1SrX/jaumrv81vc61+kiMempujsM3Yw7w5qcw==}
 
-  marked-gfm-heading-id@4.0.0:
-    resolution: {integrity: sha512-p53gp+nBIGeryucXzUFP8w67wtpin68+jOFBPw5m9FUfqx2ngAunO/I6KU6J3Xm3fyuv2JsSDxz0Z+pYVrHrwg==}
+  marked-footnote@1.2.4:
+    resolution: {integrity: sha512-DB2Kl+wFh6YwZd70qABMY6WUkG1UuyqoNTFoDfGyG79Pz24neYtLBkB+45a7o72V7gkfvbC3CGzIYFobxfMT1Q==}
     peerDependencies:
-      marked: '>=13 <14'
+      marked: '>=7.0.0'
 
-  marked@13.0.2:
-    resolution: {integrity: sha512-J6CPjP8pS5sgrRqxVRvkCIkZ6MFdRIjDkwUwgJ9nL2fbmM6qGQeB2C16hi8Cc9BOzj6xXzy0jyi0iPIfnMHYzA==}
+  marked-gfm-heading-id@4.1.1:
+    resolution: {integrity: sha512-EeQZieAQmsI6c2tWLx0ETd0VjPwLV8qi+HT0dIsfVMERm0rCIuXfRvZXJbo1SgUi++lmuR1LVY+QzgNiLNvVpw==}
+    peerDependencies:
+      marked: '>=13 <16'
+
+  marked@13.0.3:
+    resolution: {integrity: sha512-rqRix3/TWzE9rIoFGIn8JmsVfhiuC8VIQ8IdX5TfzmeBucdY05/0UlzKaw0eVtpcN/OdVFpBk7CjKGo9iHJ/zA==}
     engines: {node: '>= 18'}
     hasBin: true
 
 snapshots:
 
-  '@rasch/reno@0.2.1':
+  '@rasch/reno@0.3.0':
     dependencies:
-      marked: 13.0.2
-      marked-gfm-heading-id: 4.0.0(marked@13.0.2)
+      marked: 13.0.3
+      marked-footnote: 1.2.4(marked@13.0.3)
+      marked-gfm-heading-id: 4.1.1(marked@13.0.3)
 
   dicecube@0.1.0: {}
 
   github-slugger@2.0.0: {}
 
-  marked-gfm-heading-id@4.0.0(marked@13.0.2):
+  marked-footnote@1.2.4(marked@13.0.3):
+    dependencies:
+      marked: 13.0.3
+
+  marked-gfm-heading-id@4.1.1(marked@13.0.3):
     dependencies:
       github-slugger: 2.0.0
-      marked: 13.0.2
+      marked: 13.0.3
 
-  marked@13.0.2: {}
+  marked@13.0.3: {}

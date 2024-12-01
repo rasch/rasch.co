@@ -1,7 +1,7 @@
 {
   "type": "module",
   "devDependencies": {
-    "@rasch/reno": "^0.2.1",
+    "@rasch/reno": "^0.3.0",
     "dicecube": "^0.1.0"
   }
 }
