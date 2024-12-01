@@ -37,6 +37,7 @@ ${[1, 2, 3, 4, 5, 6].map(n => {
     line-height: ${g * Math.ceil(fs) / fs};
     font-size: ${fs}rem;
     font-family: var(--serif);
+    font-weight: bold;
   }`
 }).join("")}
 
@@ -57,12 +58,12 @@ ${[1, 2, 3, 4, 5, 6].map(n => {
 
 .content a, a:visited {
   color: inherit;
+  text-decoration: none;
+  box-shadow: 0 1px 0 0 currentColor;
 }
 
 .content a:hover {
-  color: var(--black);
-  background-image: var(--gradient);
-  text-decoration: none;
+  box-shadow: 0 3px 0 0 currentColor;
 }
 
 /* fix vertical rhythm */
@@ -148,7 +149,11 @@ ${[1, 2, 3, 4, 5, 6].map(n => {
   padding: ${g}rem;
   overflow: auto;
   tab-size: 2;
-  background-color: var(--texture);
+  box-shadow:
+    -1px 0 0 0 var(--texture),
+    1px 0 0 0 var(--texture),
+    0 -1px 0 0 var(--texture),
+    0 1px 0 0 var(--texture);
 }
 
 .content pre > code {
@@ -184,7 +189,7 @@ ${[1, 2, 3, 4, 5, 6].map(n => {
 
 .content q {
   quotes: "“" "”" "‘" "’";
-  font-family: var(--serif);
+  font-style: italic;
 }
 
 .content .table-wrapper {
