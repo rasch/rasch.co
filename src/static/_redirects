@@ -5,6 +5,7 @@
 
 /w* /writing/:splat
 
+/bsky https://bsky.app/profile/rasch.co
 /codeberg https://codeberg.org/rasch
 /docker https://hub.docker.com/u/rasch
 /fossil https://chiselapp.com/user/rasch
