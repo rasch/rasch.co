@@ -195,7 +195,7 @@ const konamiFunction = () => {
   global.style.setProperty("--texture-light", "tomato")
 }
 
-document.addEventListener('keydown', e => {
+document.addEventListener("keydown", e => {
   if (e.key === konamiKeys[konamiIndex++]) {
     if (konamiIndex === konamiKeys.length) {
       konamiIndex = 0
