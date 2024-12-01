@@ -18,8 +18,4 @@ export const inlineListCSS = () => css`
 
 .content ul.inline-list li:not(:last-child)::after {
   content: ", ";
-}
-
-.content ul.inline-list li:last-child::before {
-  content: "and ";
 }`
