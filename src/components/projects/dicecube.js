@@ -1,4 +1,4 @@
-import { md, html } from "@rasch/reno"
+import { md } from "@rasch/reno"
 
 /**
  * @type {import("./index.js").Project}
