@@ -11,7 +11,10 @@ import { syntaxHighlight } from "./syntax-highlight.js"
 export const template = post => html`<!doctype html>
 <html class="font-scale">
 ${head(post)}
-<body>
+<body class="no-js">
+  <script>
+    document.querySelector("body").classList.remove("no-js")
+  </script>
   ${toggleDarkMode()}
   <div class="theme-wrapper page">
     ${navigationMini()}
