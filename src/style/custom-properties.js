@@ -11,10 +11,12 @@ export const customPropertiesCSS = () => css`
   --mono: var(--system-mono);
 
   --white: hsl(120 25% 95%);
-  --black: hsl(180 1% 13%);
   --white-opaque: hsl(120 25% 95% / 13%);
+  --bright-white: hsl(120 25% 98%);
+  --black: hsl(180 1% 13%);
   --black-opaque: hsl(180 1% 13% / 67%);
   --black-sheer: hsl(180 1% 13% / 17%);
+  --dark-black-opaque: hsl(180 1% 9% / 77%);
 
   --fg: var(--white);
   --bg: var(--black);

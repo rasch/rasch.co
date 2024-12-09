@@ -149,11 +149,12 @@ ${[1, 2, 3, 4, 5, 6].map(n => {
   padding: ${g}rem;
   overflow: auto;
   tab-size: 2;
-  box-shadow:
-    -1px 0 0 0 var(--texture),
-    1px 0 0 0 var(--texture),
-    0 -1px 0 0 var(--texture),
-    0 1px 0 0 var(--texture);
+  background-color: var(--dark-black-opaque);
+  border-radius: ${g / 4}rem;
+}
+
+#toggle-dark-mode:checked ~ .theme-wrapper .content pre {
+  background-color: var(--bright-white);
 }
 
 .content pre > code {
@@ -339,13 +340,14 @@ ${[1, 2, 3, 4, 5, 6].map(n => {
 }
 
 .content figure {
-  padding: ${g / 2}rem;
+  padding: ${g}rem;
   text-align: center;
-  box-shadow:
-    -1px 0 0 0 var(--texture),
-    1px 0 0 0 var(--texture),
-    0 -1px 0 0 var(--texture),
-    0 1px 0 0 var(--texture);
+  background-color: var(--dark-black-opaque);
+  border-radius: ${g / 4}rem;
+}
+
+#toggle-dark-mode:checked ~ .theme-wrapper .content figure {
+  background-color: var(--bright-white);
 }
 
 .content figure img {
