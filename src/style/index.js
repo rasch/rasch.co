@@ -29,6 +29,7 @@ import { whoamiCSS } from "../components/whoami.js"
 import { aboutCSS } from "../components/about.js"
 import { profileCSS } from "../components/profile.js"
 import { contactCSS } from "../components/contact.js"
+import { formCSS } from "../components/form.js"
 import { navigationMiniCSS } from "../components/navigation-mini.js"
 import { postIndexCSS } from "../components/post-index.js"
 import { postCardCSS } from "../components/post-card.js"
@@ -67,6 +68,7 @@ ${whoamiCSS()}
 ${profileCSS()}
 ${aboutCSS()}
 ${contactCSS()}
+${formCSS()}
 ${navigationMiniCSS()}
 ${postIndexCSS()}
 ${postCardCSS()}
