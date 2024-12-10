@@ -301,7 +301,7 @@ const setMargin = e => {
   const fontSize = parseFloat(fs)
   const g = (1 + Math.sqrt(5)) / 2
   const ht = e.clientHeight
-  const margin = (Math.ceil(ht / (g * fontSize)) * (g * fontSize) - ht) / 2
+  const margin = (Math.round(ht / (g * fontSize)) * (g * fontSize) - ht) / 2
 
   e.style.marginTop = `${margin}px`
   e.style.marginBottom = `${margin}px`
@@ -309,7 +309,7 @@ const setMargin = e => {
 
 // Align images on vertical grid
 document
-.querySelectorAll(".content img, .content iframe")
+.querySelectorAll(".content img, .content iframe[src^=\"https://www.youtube.com/embed\"]")
 .forEach(i => i.addEventListener("load", () =>
   setMargin(/** @type {HTMLImageElement | HTMLIFrameElement} */ (i))
 ))
