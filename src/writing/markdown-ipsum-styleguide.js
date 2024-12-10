@@ -90,7 +90,6 @@ ${admonition({
   - [CSS](#css)
 - [Images](#images)
 - [Figures](#figures)
-- [Videos](#videos)
 - [Tables](#tables)
   - [Center Aligned Table](#center-aligned-table)
   - [Left Aligned Table](#left-aligned-table)
@@ -100,7 +99,6 @@ ${admonition({
 - [Badges](#badges)
 - [Comments](#comments)
 - [Admonitions](#admonitions)
-- [Footnotes](#footnotes)
 - [Forms](#forms)
   - [Login Form](#login-form)
   - [Registration Form](#registration-form)
@@ -111,6 +109,8 @@ ${admonition({
   - [Address Form](#address-form)
   - [Survey Form](#survey-form)
 - [Code Sandbox](#code-sandbox)
+- [Videos](#videos)
+- [Footnotes](#footnotes)
 
 The rest of this document is mostly placeholder text from [Cat Ipsum], and
 images from [placecats], plus some random quotes. The actual content is the
@@ -573,30 +573,6 @@ ${placeText(4)}
 </figure>
 \`\`\`
 
-## Videos
-
-The only video type that is currently supported is an \`<iframe>\` with a
-YouTube embed. I'm not hosting my own content in a \`<video>\` element until I'm
-getting paid... **Bandwidth ain't free!**
-
-<iframe
-  src="https://www.youtube.com/embed/SLIZpWrK8xo?si=cPS76-2JSHY9NBf8"
-  title="Pete &amp; Bas - T-Pain (Music Video)"
-  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-  referrerpolicy="strict-origin-when-cross-origin"
-  allowfullscreen
-></iframe>
-
-\`\`\`html
-<iframe
-  src="https://www.youtube.com/embed/SLIZpWrK8xo?si=cPS76-2JSHY9NBf8"
-  title="Pete &amp; Bas - T-Pain (Music Video)"
-  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-  referrerpolicy="strict-origin-when-cross-origin"
-  allowfullscreen
-></iframe>
-\`\`\`
-
 ## Tables
 
 ### Center Aligned Table
@@ -817,40 +793,6 @@ ${admonition({
   style: "danger",
 })}
 
-## Footnotes
-
-Lorem ipsum[^1] dolor sit amet, consectetur adipiscing elit. Donec porttitor,
-ipsum vitae dignissim cursus, risus enim molestie lorem, non molestie felis
-velit eget mi. In eu ex ut enim scelerisque accumsan id vitae augue. Sed
-iaculis, turpis et auctor lacinia, lectus justo vulputate ipsum, sit amet
-scelerisque nibh tellus et augue. Ut urna dui, tristique[^2] sit amet malesuada
-eget, aliquet at risus. Cras id nisl vitae enim fringilla varius mollis et
-risus. Etiam facilisis varius sem ac dapibus[^3]. Suspendisse potenti. Praesent
-rhoncus leo vel rhoncus sodales.
-
-[^1]: Donec posuere nunc non turpis ultrices dignissim tempor a orci.
-[^2]: Fusce tincidunt diam molestie sapien rutrum, vel porta risus tristique.
-[^3]: Nullam nec vehicula felis. Nunc ultrices enim ac tristique posuere. Etiam
-    ac mi aliquet, pellentesque tortor volutpat, aliquam enim. Donec sit amet
-    diam vel eros elementum malesuada vel vitae ipsum. Nulla scelerisque tellus
-    in augue vehicula, et pretium magna laoreet. Aenean a nulla at tortor
-    vestibulum bibendum quis non nisi. Sed lobortis nulla ac ligula viverra
-    molestie.
-
-    Aenean dictum elit in augue placerat egestas. Morbi euismod justo a arcu
-    tincidunt molestie. Fusce egestas commodo leo ac sollicitudin. Morbi turpis
-    mi, fringilla cursus nisl sed, maximus ultricies mi. Quisque semper nisl in
-    leo lobortis posuere. Etiam sagittis eleifend pharetra. Aliquam venenatis
-    augue non risus sodales, vel aliquet nibh elementum. Phasellus finibus nulla
-    vitae quam consequat, faucibus dignissim sem consequat. Aliquam auctor dui
-    sed nisi iaculis, eu dapibus lectus sagittis.
-
-\`\`\`markdown
-Lorem ipsum[^1] dolor sit…
-
-[^1]: Donec posuere nunc non turpis…
-\`\`\`
-
 ## Forms
 
 ### Login Form
@@ -925,6 +867,61 @@ ${codeSandbox("code-sandbox-2")}
 $\{codeSandbox("code-sandbox-2")}
 \`\`\`
 
+## Videos
+
+The only video type that is currently supported is an \`<iframe>\` with a
+YouTube embed. I'm not hosting my own content in a \`<video>\` element until I'm
+getting paid... **Bandwidth ain't free!**
+
+<iframe
+  src="https://www.youtube.com/embed/SLIZpWrK8xo?si=cPS76-2JSHY9NBf8"
+  title="Pete &amp; Bas - T-Pain (Music Video)"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  referrerpolicy="strict-origin-when-cross-origin"
+  allowfullscreen
+></iframe>
+
+\`\`\`html
+<iframe
+  src="https://www.youtube.com/embed/SLIZpWrK8xo?si=cPS76-2JSHY9NBf8"
+  title="Pete &amp; Bas - T-Pain (Music Video)"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  referrerpolicy="strict-origin-when-cross-origin"
+  allowfullscreen
+></iframe>
 \`\`\`
 
+## Footnotes
+
+Lorem ipsum[^1] dolor sit amet, consectetur adipiscing elit. Donec porttitor,
+ipsum vitae dignissim cursus, risus enim molestie lorem, non molestie felis
+velit eget mi. In eu ex ut enim scelerisque accumsan id vitae augue. Sed
+iaculis, turpis et auctor lacinia, lectus justo vulputate ipsum, sit amet
+scelerisque nibh tellus et augue. Ut urna dui, tristique[^2] sit amet malesuada
+eget, aliquet at risus. Cras id nisl vitae enim fringilla varius mollis et
+risus. Etiam facilisis varius sem ac dapibus[^3]. Suspendisse potenti. Praesent
+rhoncus leo vel rhoncus sodales.
+
+[^1]: Donec posuere nunc non turpis ultrices dignissim tempor a orci.
+[^2]: Fusce tincidunt diam molestie sapien rutrum, vel porta risus tristique.
+[^3]: Nullam nec vehicula felis. Nunc ultrices enim ac tristique posuere. Etiam
+    ac mi aliquet, pellentesque tortor volutpat, aliquam enim. Donec sit amet
+    diam vel eros elementum malesuada vel vitae ipsum. Nulla scelerisque tellus
+    in augue vehicula, et pretium magna laoreet. Aenean a nulla at tortor
+    vestibulum bibendum quis non nisi. Sed lobortis nulla ac ligula viverra
+    molestie.
+
+    Aenean dictum elit in augue placerat egestas. Morbi euismod justo a arcu
+    tincidunt molestie. Fusce egestas commodo leo ac sollicitudin. Morbi turpis
+    mi, fringilla cursus nisl sed, maximus ultricies mi. Quisque semper nisl in
+    leo lobortis posuere. Etiam sagittis eleifend pharetra. Aliquam venenatis
+    augue non risus sodales, vel aliquet nibh elementum. Phasellus finibus nulla
+    vitae quam consequat, faucibus dignissim sem consequat. Aliquam auctor dui
+    sed nisi iaculis, eu dapibus lectus sagittis.
+
+\`\`\`markdown
+Lorem ipsum[^1] dolor sit…
+
+[^1]: Donec posuere nunc non turpis…
+\`\`\`
 `
