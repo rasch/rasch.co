@@ -59,16 +59,16 @@ const messageField = (id, text = "Message") => html`
 /**
  * @param {string} id
  * @param {string} [text]
+ * @param {string} [pattern]
  */
-const passwordField = (id, text = "Password") => html`
+const passwordField = (id, text = "Password", pattern) => html`
 <p class="password">
   <label for="${id}_password">${text}</label>
   <input
     type="password"
     id="${id}_password"
     name="${id}_password"
-    minlength="8"
-    maxlength="255"
+    ${pattern ? `pattern="${pattern}"` : `minlength="8" maxlength="255"`}
     required
   />
   <input type="checkbox" id="${id}_password_toggle" name="${id}_password_toggle" />
@@ -269,22 +269,6 @@ const cardExpirationField = (id, text = "Expiration") => html`
  * @param {string} id
  * @param {string} [text]
  */
-const cardSecurityField = (id, text = "Expiration") => html`
-<p>
-  <label for="${id}_card_security">${text}</label>
-  <input
-    type="tel"
-    id="${id}_card_security"
-    name="${id}_card_security"
-    pattern="^\\s*\\d{3,4}\\s*$"
-    required
-  />
-</p>`
-
-/**
- * @param {string} id
- * @param {string} [text]
- */
 const zipCodeField = (id, text = "Zip Code") => html`
 <p>
   <label for="${id}_zip">${text}</label>
@@ -378,7 +362,7 @@ export const paymentForm = (id = "payment") => html`
   ${numberField(`${id}_card_number`, "Card Number")}
   <div class="half">
     ${cardExpirationField(id)}
-    ${cardSecurityField(id, "CSC")}
+    ${passwordField(id, "CSC", "^\\s*\\d{3,4}\\s*$")}
   </div>
   ${checkboxField(id + "_save_card", "Save card for future purchases")}
   ${submitButton("Pay Now")}
@@ -387,6 +371,7 @@ export const paymentForm = (id = "payment") => html`
     { url: "#", text: "Privacy Policy" }
   )}
   ${validateCard(id)}
+  ${passwordToggle(id)}
 </form>`
 
 /**
