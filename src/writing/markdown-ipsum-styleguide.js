@@ -1,6 +1,7 @@
 import { html, md } from "@rasch/reno"
 
 import { admonition } from "../components/admonition.js"
+import { codeSandbox } from "../components/code-sandbox.js"
 import { keyboard } from "../components/keyboard.js"
 import { inlineList } from "../components/inline-list.js"
 
@@ -109,7 +110,7 @@ ${admonition({
   - [Payment Form](#payment-form)
   - [Address Form](#address-form)
   - [Survey Form](#survey-form)
-- [Code Playground](#code-playground)
+- [Code Sandbox](#code-sandbox)
 
 The rest of this document is mostly placeholder text from [Cat Ipsum], and
 images from [placecats], plus some random quotes. The actual content is the
@@ -900,8 +901,30 @@ ${surveyForm(
   "#"
 )}
 
-## Code Playground
+## Code Sandbox
 
-TODO
+${codeSandbox(
+  "code-sandbox-1",
+  "<h1>Hello, world!</h1>",
+  "h1 { color: coral; }",
+  "document.querySelector('h1').style.background = 'green'"
+)}
+
+\`\`\`javascript
+$\{codeSandbox(
+  "code-sandbox-1",
+  "<h1>Hello, world!</h1>",
+  "h1 { color: coral; }",
+  "document.querySelector('h1').style.background = 'green'"
+)}
+\`\`\`
+
+${codeSandbox("code-sandbox-2")}
+
+\`\`\`javascript
+$\{codeSandbox("code-sandbox-2")}
+\`\`\`
+
+\`\`\`
 
 `

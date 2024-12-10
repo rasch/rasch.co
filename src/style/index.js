@@ -30,6 +30,7 @@ import { aboutCSS } from "../components/about.js"
 import { profileCSS } from "../components/profile.js"
 import { contactCSS } from "../components/contact.js"
 import { formCSS } from "../components/form.js"
+import { codeSandboxCSS } from "../components/code-sandbox.js"
 import { navigationMiniCSS } from "../components/navigation-mini.js"
 import { postIndexCSS } from "../components/post-index.js"
 import { postCardCSS } from "../components/post-card.js"
@@ -69,6 +70,7 @@ ${profileCSS()}
 ${aboutCSS()}
 ${contactCSS()}
 ${formCSS()}
+${codeSandboxCSS()}
 ${navigationMiniCSS()}
 ${postIndexCSS()}
 ${postCardCSS()}

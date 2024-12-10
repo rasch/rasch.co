@@ -56,6 +56,24 @@ if (canvas) {
 }
 
 //----------------------------------------------------------------------
+// Utilities
+//----------------------------------------------------------------------
+
+/**
+ * @param {Function} fn
+ * @returns {(_: Event) => void}
+ */
+const debounce = (fn, t = 500) => {
+  /** @type {number} */
+  let timer
+
+  return _ => {
+    clearTimeout(timer)
+    timer = setTimeout(() => fn(), t)
+  }
+}
+
+//----------------------------------------------------------------------
 // Name Pronunciation
 //----------------------------------------------------------------------
 
@@ -296,20 +314,14 @@ document
   setMargin(/** @type {HTMLImageElement | HTMLIFrameElement} */ (i))
 ))
 
-/** @type {number} */
-let debounce
-
-window.addEventListener("resize", () => {
-  clearTimeout(debounce)
-  debounce = setTimeout(() =>
-    document
-    .querySelectorAll(".content img, .content iframe")
-    .forEach(i =>
-      setMargin(/** @type {HTMLImageElement | HTMLIFrameElement} */ (i))
-    ),
-    250
-  )
-})
+window.addEventListener("resize", debounce(() =>
+  document
+  .querySelectorAll(".content img, .content iframe[src^=\"https://www.youtube.com/embed\"]")
+  .forEach(i =>
+    setMargin(/** @type {HTMLImageElement | HTMLIFrameElement} */ (i))
+  ),
+  250
+))
 
 // Show vertical grid by pressing "#"
 document.addEventListener("keydown", e => e.key === "#" &&
@@ -359,4 +371,54 @@ form?.addEventListener("change", () => {
       p.style.display = "none"
     }
   })
+})
+
+//----------------------------------------------------------------------
+// Code Sandbox Editor
+//----------------------------------------------------------------------
+
+const sandboxes = document.querySelectorAll(".code-sandbox")
+
+sandboxes.forEach(sb => {
+  /** @type {HTMLIFrameElement | null} */
+  const display = sb.querySelector(".display iframe")
+
+  /** @type {HTMLElement | null} */
+  const editor = sb.querySelector(".editor")
+
+  /** @type {HTMLTextAreaElement | null} */
+  const html = sb.querySelector(".editor .html-tab ~ textarea")
+
+  /** @type {HTMLTextAreaElement | null} */
+  const css = sb.querySelector(".editor .css-tab ~ textarea")
+
+  /** @type {HTMLTextAreaElement | null} */
+  const js = sb.querySelector(".editor .js-tab ~ textarea")
+
+  const renderHTML = () => {
+    if (!display) return
+
+    display.srcdoc = `<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>${css?.value}</style>
+  <script type="module">
+    try {
+      ${js?.value}
+    } catch (e) {
+      console.error(e.message)
+    }
+  </script>
+</head>
+<body>
+  ${html?.value}
+</body>
+</html>`
+  }
+
+  renderHTML()
+
+  editor?.addEventListener("input", debounce(renderHTML))
 })
