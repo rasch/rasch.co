@@ -845,27 +845,84 @@ ${surveyForm(
 
 ## Code Sandbox
 
+\`\`\`javascript
+codeSandbox(id, initHTML, initCSS, initJS)
+\`\`\`
+
+This code sandbox component is extremely minimal but (mostly) works. The only
+required argument is a unique string \`id\` in case of multiple \`codeSandbox\`
+components on a page.
+
+${codeSandbox("code-sandbox-1")}
+
+\`\`\`javascript
+$\{codeSandbox("code-sandbox-1")}
+\`\`\`
+
+Usually for a demo, there will at least be some HTML and CSS.
+
 ${codeSandbox(
-  "code-sandbox-1",
+  "code-sandbox-2",
   "<h1>Hello, world!</h1>",
   "h1 { color: coral; }",
-  "document.querySelector('h1').style.background = 'green'"
+  "document.body.style.background = 'steelblue'"
 )}
 
 \`\`\`javascript
 $\{codeSandbox(
-  "code-sandbox-1",
+  "code-sandbox-2",
   "<h1>Hello, world!</h1>",
   "h1 { color: coral; }",
-  "document.querySelector('h1').style.background = 'green'"
+  "document.body.style.background = 'steelblue'"
 )}
 \`\`\`
 
-${codeSandbox("code-sandbox-2")}
-
-\`\`\`javascript
-$\{codeSandbox("code-sandbox-2")}
-\`\`\`
+${codeSandbox(
+"code-sandbox-3",
+"<h1>Click me.</h1>",
+`html, body {
+  height: 100%;
+}
+body {
+  display: grid;
+  place-content: center;
+  margin: 0;
+  background: pink;
+  overflow: hidden;
+}
+h1 {
+  color: tomato;
+  padding: 0.3rem 0.6rem;
+}
+.balloon {
+  position: absolute;
+  top: -20vh;
+  font-size: 1.3rem;
+  transition: linear 2s transform;
+}
+.drop {
+  transform: translateY(120vh);
+}`,
+`// make balloons
+const h1 = document.querySelector("h1")
+const rnd = n => Math.floor(Math.random() * n) + 1
+const mb = () => {
+  const e = document.createElement("span")
+  e.style.left = rnd(window.innerWidth) + "px"
+  e.style.rotate = rnd(5) + "deg"
+  e.classList.add("balloon")
+  e.innerHTML = "🎈"
+  document.body.appendChild(e)
+  return e
+}
+h1.addEventListener("click", () => {
+  setTimeout(() => h1.innerText = "🤡", rnd(20000))
+  for (let i = 0; i < 250; i++) {
+    const b = mb()
+    setTimeout(() => b.classList.add("drop"), rnd(20000))
+  }
+})`
+)}
 
 ## Videos
 

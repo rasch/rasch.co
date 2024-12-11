@@ -13,17 +13,17 @@ export const codeSandbox = (id, initHTML = "", initCSS = "", initJS = "") => htm
     <li>
       <input type="radio" id="${id}-html-tab" name="${id}-editor" checked>
       <label for="${id}-html-tab" class="html-tab" role="button">HTML</label>
-      <textarea spellcheck="false">${initHTML}</textarea>
+      <textarea spellcheck="false" placeholder="HTML please...">${initHTML}</textarea>
     </li>
     <li>
       <input type="radio" id="${id}-css-tab" name="${id}-editor">
       <label for="${id}-css-tab" class="css-tab" role="button">CSS</label>
-      <textarea spellcheck="false">${initCSS}</textarea>
+      <textarea spellcheck="false" placeholder="Gimme that CSS...">${initCSS}</textarea>
     </li>
     <li>
       <input type="radio" id="${id}-js-tab" name="${id}-editor">
       <label for="${id}-js-tab" class="js-tab" role="button">JS</label>
-      <textarea spellcheck="false">${initJS}</textarea>
+      <textarea spellcheck="false" placeholder="I need JavaScript...">${initJS}</textarea>
     </li>
   </ul>
   <div class="display">
@@ -51,11 +51,7 @@ export const codeSandboxCSS = () => css`
   width: 320px;
   height: ${g * 10}rem;
   background: white;
-  box-shadow:
-    -1px 0 0 0 currentColor,
-    1px 0 0 0 currentColor,
-    0 -1px 0 0 currentColor,
-    0 1px 0 0 currentColor;
+  box-shadow: inset 1px 1px 3px var(--dark-black-opaque);
 }
 
 .code-sandbox .display iframe {
@@ -99,6 +95,7 @@ export const codeSandboxCSS = () => css`
   color: inherit;
   box-shadow: inset 1px 1px 3px var(--dark-black-opaque);
   border-radius: ${g / 8}rem;
+  white-space: pre;
 }
 
 #toggle-dark-mode:checked ~ .theme-wrapper .code-sandbox .editor li textarea {

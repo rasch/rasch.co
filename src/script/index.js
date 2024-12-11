@@ -420,5 +420,7 @@ sandboxes.forEach(sb => {
 
   renderHTML()
 
-  editor?.addEventListener("input", debounce(renderHTML))
+  html?.addEventListener("input", debounce(renderHTML))
+  css?.addEventListener("input", debounce(renderHTML))
+  js?.addEventListener("input", debounce(renderHTML))
 })
