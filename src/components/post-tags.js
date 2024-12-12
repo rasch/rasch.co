@@ -48,9 +48,7 @@ export const postTagsCSS = () => css`
 }
 
 .post-tags fieldset input[type="radio"]:focus + label {
-  outline: medium auto currentColor;
-  outline: medium auto invert;
-  outline: 5px auto -webkit-focus-ring-color;
+  outline: 3px solid hotpink;
 }
 
 .post-tags fieldset label {

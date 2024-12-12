@@ -85,9 +85,7 @@ export const toggleDarkModeCSS = () => css`
 
 /* outline label when the checkbox is focused */
 .no-js #toggle-dark-mode:focus ~ .theme-wrapper label.toggle-theme {
-  outline: medium auto currentColor;
-  outline: medium auto invert;
-  outline: 5px auto -webkit-focus-ring-color;
+  outline: 3px solid hotpink;
 }
 
 #toggle-dark-mode ~ .theme-wrapper .toggle-theme {

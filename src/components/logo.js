@@ -2,7 +2,7 @@ import { css, html } from "@rasch/reno"
 import { icon } from "./icon.js"
 
 /**
- * @param {"simple" | "dots" | "fancy"} [style]
+ * @param {"simple" | "dots"} [style]
  */
 export const logo = style => html`
 <a class="logo${style ? ` ${style}` : ""}" href="/">
@@ -33,11 +33,4 @@ export const logoCSS = () => css`
 .logo.dots {
   background-image: radial-gradient(currentColor 1px, transparent 1px);
   background-size: 10px 10px;
-}
-
-.logo.fancy {
-  border: solid 1rem transparent;
-  outline: solid 1px var(--fg);
-  outline-offset: -0.5rem;
-  background: conic-gradient(from 90deg at 1px 1px,transparent 25%,var(--fg) 0);
 }`

@@ -16,4 +16,8 @@ h2.texture {
   border-top: 1px solid currentColor;
   font-size: 2rem;
   text-align: center;
+}
+
+*:focus {
+  outline: 3px solid hotpink;
 }`

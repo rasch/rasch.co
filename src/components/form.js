@@ -463,7 +463,6 @@ form textarea {
   height: ${g}rem;
   padding: 0 ${g / 8}rem;
   border: none;
-  outline: none;
   background-color: var(--texture);
   color: inherit;
   border-radius: ${g / 8}rem;
@@ -479,11 +478,6 @@ form textarea {
   height: ${g * 4}rem;
   vertical-align: top; /* fix vertical rhythm */
   resize: vertical;
-}
-
-form input:focus,
-form textarea:focus {
-  outline: 1px solid var(--blue);
 }
 
 #toggle-dark-mode:checked ~ .theme-wrapper form input:user-invalid,
