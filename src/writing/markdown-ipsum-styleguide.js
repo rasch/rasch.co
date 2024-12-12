@@ -46,7 +46,7 @@ const tripleTickMafia = lang => html`<code>&#96;&#96;&#96;${lang}</code>`
 export const post = {
   title: "Markdown Ipsum: A Styleguide",
   tags: ["markdown", "styleguide"],
-  date: "2024-12-01T00:00:00",
+  date: "2024-12-13T00:00:00",
   comments: true,
 }
 
@@ -794,6 +794,11 @@ ${admonition({
 })}
 
 ## Forms
+
+These forms are not currently connected to any server and data entered here is
+not collected in any way. This section is just a place to gather all of the
+available forms for styling and testing purposes. If these forms are encountered
+elsewhere on this site, then those forms are likely connected to a backend.
 
 ### Login Form
 
