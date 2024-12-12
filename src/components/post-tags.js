@@ -32,8 +32,14 @@ export const postTags = posts => html`
 </form>`
 
 export const postTagsCSS = () => css`
+.post-tags {
+  padding: 0;
+  background: none;
+}
+
 .post-tags fieldset {
   max-width: 768px;
+  padding: 0;
   border: 0;
   margin: 0 auto;
   display: flex;
@@ -51,12 +57,12 @@ export const postTagsCSS = () => css`
   outline: 3px solid hotpink;
 }
 
-.post-tags fieldset label {
+.post-tags fieldset input[type="radio"] ~ label {
   padding: 0 0.35rem;
   border: 1px solid currentColor;
   margin: 0.35rem;
   cursor: pointer;
-  transition: 512ms ease-in-out;
+  transition: 128ms ease-in-out;
 }
 
 .post-tags fieldset input:checked + label,
