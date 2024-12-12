@@ -377,28 +377,16 @@ form?.addEventListener("change", () => {
 // Code Sandbox Editor
 //----------------------------------------------------------------------
 
-const sandboxes = document.querySelectorAll(".code-sandbox")
+/**
+ * @param {HTMLIFrameElement | null} display
+ * @param {HTMLTextAreaElement | null} html
+ * @param {HTMLTextAreaElement | null} css
+ * @param {HTMLTextAreaElement | null} js
+ */
+const renderDisplay = (display, html, css, js) => {
+  if (!display) return
 
-sandboxes.forEach(sb => {
-  /** @type {HTMLIFrameElement | null} */
-  const display = sb.querySelector(".display iframe")
-
-  /** @type {HTMLElement | null} */
-  const editor = sb.querySelector(".editor")
-
-  /** @type {HTMLTextAreaElement | null} */
-  const html = sb.querySelector(".editor .html-tab ~ textarea")
-
-  /** @type {HTMLTextAreaElement | null} */
-  const css = sb.querySelector(".editor .css-tab ~ textarea")
-
-  /** @type {HTMLTextAreaElement | null} */
-  const js = sb.querySelector(".editor .js-tab ~ textarea")
-
-  const renderHTML = () => {
-    if (!display) return
-
-    display.srcdoc = `<!doctype html>
+  display.srcdoc = `<!doctype html>
 <html>
 <head>
   <meta charset="utf-8">
@@ -416,11 +404,17 @@ sandboxes.forEach(sb => {
   ${html?.value}
 </body>
 </html>`
-  }
+}
 
-  renderHTML()
+document.querySelectorAll(".code-sandbox").forEach(sb => {
+  const render = () => renderDisplay(
+    sb.querySelector(".display iframe"),
+    sb.querySelector(".editor .html-tab textarea"),
+    sb.querySelector(".editor .css-tab textarea"),
+    sb.querySelector(".editor .js-tab textarea")
+  )
 
-  html?.addEventListener("input", debounce(renderHTML))
-  css?.addEventListener("input", debounce(renderHTML))
-  js?.addEventListener("input", debounce(renderHTML))
+  render()
+
+  sb.querySelector(".editor")?.addEventListener("input", debounce(render))
 })
