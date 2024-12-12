@@ -37,6 +37,10 @@ export const postTagsCSS = () => css`
   background: none;
 }
 
+#toggle-dark-mode:checked ~ .theme-wrapper .post-tags {
+  background: none;
+}
+
 .post-tags fieldset {
   max-width: 768px;
   padding: 0;
