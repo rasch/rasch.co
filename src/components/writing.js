@@ -51,7 +51,6 @@ export const writingCSS = () => css`
 }
 
 .writing ul {
-  position: relative;
   padding: 2rem;
 }
 
@@ -80,8 +79,8 @@ export const writingCSS = () => css`
 }
 
 .writing .writing-index-link {
-  position: absolute;
-  bottom: 0;
-  right: 2rem;
+  margin-top: 2rem;
+  padding-top: 0.5rem;
   font-size: 1rem;
+  border-top: 1px solid var(--texture);
 }`
