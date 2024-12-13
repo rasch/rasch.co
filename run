@@ -2,6 +2,12 @@
 
 PATH=./node_modules/.bin:$PATH
 
+magick=magick
+
+if ! command -v magick --version >/dev/null 2>&1; then
+  magick=convert
+fi
+
 clean() {
   git clean -X
 }
@@ -21,19 +27,19 @@ build_assets() {
 }
 
 build_favicons() {
-  magick media/favicon.png -filter point -resize 50% dist/favicon-16x16.png
-  magick media/favicon.png -filter point -resize 100% dist/favicon-32x32.png
-  magick media/favicon.png -filter point -resize 200% dist/favicon-64x64.png
-  magick media/favicon.png -filter point -resize 562.5% dist/favicon-180x180.png
-  magick media/favicon.png -filter point -resize 600% dist/favicon-192x192.png
-  magick media/favicon.png -filter point -resize 1600% dist/favicon-512x512.png
+  $magick media/favicon.png -filter point -resize 50% dist/favicon-16x16.png
+  $magick media/favicon.png -filter point -resize 100% dist/favicon-32x32.png
+  $magick media/favicon.png -filter point -resize 200% dist/favicon-64x64.png
+  $magick media/favicon.png -filter point -resize 562.5% dist/favicon-180x180.png
+  $magick media/favicon.png -filter point -resize 600% dist/favicon-192x192.png
+  $magick media/favicon.png -filter point -resize 1600% dist/favicon-512x512.png
 
-  magick dist/favicon-16x16.png dist/favicon-32x32.png dist/favicon.ico
+  $magick dist/favicon-16x16.png dist/favicon-32x32.png dist/favicon.ico
 }
 
 build_sprite() {
   mkdir -p dist/i
-  magick -background black \
+  $magick -background black \
     media/sprite/phalanx.jpg \
     media/sprite/today.jpg \
     media/sprite/transactions.jpg \
@@ -54,7 +60,7 @@ build_images() {
   for img in media/images/*.jpg; do
     for size in 1600 1200 600; do
       mkdir -p dist/i/"$size"
-      magick "$img" -resize "${size}x${size}>" +profile "*" \
+      $magick "$img" -resize "${size}x${size}>" +profile "*" \
         dist/i/"$size"/"${img##*/}"
     done
   done
