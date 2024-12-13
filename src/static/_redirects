@@ -1,3 +1,10 @@
+/colors/* https://idyllic-unicorn-9d8b00.netlify.app/:splat 200
+/dicecube/* https://timely-blancmange-828fa9.netlify.app/:splat 200
+/phalanx/* https://zingy-pastelito-1caf93.netlify.app/:splat 200
+/pt/* https://adorable-pika-c0addb.netlify.app/:splat 200
+
+/w* /writing/:splat
+
 /bsky https://bsky.app/profile/rasch.co
 /codeberg https://codeberg.org/rasch
 /docker https://hub.docker.com/u/rasch
