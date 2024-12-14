@@ -1,9 +1,7 @@
-/colors/* https://idyllic-unicorn-9d8b00.netlify.app/:splat 200
-/dicecube/* https://timely-blancmange-828fa9.netlify.app/:splat 200
-/phalanx/* https://zingy-pastelito-1caf93.netlify.app/:splat 200
-/pt/* https://adorable-pika-c0addb.netlify.app/:splat 200
-
-/w* /writing/:splat
+/colors https://my-crayons.netlify.app
+/dicecube https://dicecube.netlify.app
+/phalanx https://28-keys.netlify.app
+/pt https://timer-tomato.netlify.app
 
 /bsky https://bsky.app/profile/rasch.co
 /codeberg https://codeberg.org/rasch
