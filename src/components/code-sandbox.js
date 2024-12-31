@@ -128,6 +128,7 @@ export const codeSandboxCSS = () => css`
 }
 
 .code-sandbox .editor {
+  position: relative;
   flex-grow: 2;
   width: 320px;
   margin: 0;
